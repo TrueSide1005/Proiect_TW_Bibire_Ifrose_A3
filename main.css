@@ -1,6 +1,5 @@
 body {
     background-color: #F8F8FF;
-    margin: 0;
   }
 
 /**{
@@ -8,22 +7,8 @@ body {
     padding: 0;
     list-style: none;
     text-decoration: none;
-}*/
-
-.log{
-    border-color: transparent;
-    background-color: transparent;
-    width: 5em;
-    color: white;
-    height: 3.5em;
-    float:right;
-    text-align: center;
 }
 
-.log:hover {
-    background-color: rgb(36, 19, 196);
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  }
 
 .bar{
     background-color: rgb(8, 104, 214);
