@@ -18,6 +18,8 @@
             <b>
                 <h2>Log in! It's free :)</h2>
             </b>
+            <form action="add_user.php" method="post"
+                id="add_student_form" target="_blank">
             <p>
                 <label for="email"><B>Adresa de e-mail:</B></label>
                 <br><input type="text" id="email" name="E-mail" placeholder="Adresa de e-mail...">
@@ -74,8 +76,9 @@
                 </select>
             </p>
             <p>
-                <input type="submit" value="Login">
+                <input type="submit" value="Login" formaction="index.html" formtarget="_self"></p>
             </p>
+        </form>
 
         </div>
     </div>
