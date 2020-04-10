@@ -1,6 +1,5 @@
 .map{
     height: 700px;
-    width: 300px;
+    width: 100%
     border: solid black;
-    z-index: -1;
 }
