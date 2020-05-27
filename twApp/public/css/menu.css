@@ -57,6 +57,7 @@ header{
   }
   
   .log:hover {
+    cursor: pointer;
     background-color: rgb(31, 87, 36);
     box-shadow: 0 9px 14px 0 rgba(0,0,0,0.24), 0 17px 30px 0 rgba(0,0,0,0.19);
   }
@@ -104,11 +105,13 @@ header{
   }
   
   .listaPrincipala a:hover{
+    cursor: pointer;
       color: rgb(17, 43, 31);
       font-size: large;
   }
   
   .listaPrincipala li:hover > .sublist{
+    cursor: pointer;
     opacity: 1;
     visibility: visible;
   }

@@ -34,7 +34,7 @@ if (!empty($_POST)) {
     <title>Login Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" />
-    <link rel="stylesheet" type="text/css" href="/twApp/public/css/login.css" />
+    <link rel="stylesheet" type="text/css" href="/twApp/public/css/auth.css" />
 </head>
 
 <body>
@@ -46,7 +46,7 @@ if (!empty($_POST)) {
             <div class="sign">
 
                 <a href="register"> <button class="log" type="button">
-                        Sign in
+                        Sign up
                     </button> </a>
                 <a href="login"><button class="log" type="button">
                         Log in
@@ -56,23 +56,26 @@ if (!empty($_POST)) {
         </div>
     </header>
 
+    <div class="image-div">
+        <div class="center">
+            <b>
+                <h2>Log in! :)</h2>
+            </b>
+            <form action="" method="post" id="add_student_form">
+                <p>
+                    <label for="name"><B>Nume:</B></label>
+                    <br><input type="text" id="username" name="Nume" placeholder="Numele de utilizator...">
+                </p>
+                <p>
+                    <label for="pass"><b>Parola:</b></label>
+                    <br><input type="password" id="pass" name="Parola" placeholder="Parola...">
+                </p>
 
-    <div class="center">
-        <form action="" method="post" id="add_student_form">
-            <p>
-                <label for="name"><B>Nume:</B></label>
-                <br><input type="text" id="username" name="Nume" placeholder="Introduce-ti nume...">
-            </p>
-            <p>
-                <label for="pass"><b>Parola:</b></label>
-                <br><input type="password" id="pass" name="Parola" placeholder="Parola...">
-            </p>
-
-            <p>
-                <input type="submit" name="submit" value="Login" formtarget="_self">
-            </p>
-        </form>
-
+                <p>
+                    <input type="submit" name="submit" value="Login" formtarget="_self">
+                </p>
+            </form>
+        </div>
     </div>
     </div>
 </body>

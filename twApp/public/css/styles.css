@@ -1,7 +1,60 @@
-.map{
-    top: 30px;
-    max-width: 90em;
-	margin: 0 auto;
-    padding: 10em;
-    height: 40em;
+.image-div {
+    background-image: url("/twApp/public/images/office.jpg");
+    height: 100%;
+    z-index: -1;
+    width: 100%;
+    left: 0;
+    position: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.image-m{
+    margin-left: 3em;
+}
+
+.center {
+    width: 100%;
+    align-self: center;
+}
+
+.citat {
+    display: flex;
+    align-items: center;
+    margin-left: 3em;
+    align-self: center;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.image-btn {
+    background-color: transparent;
+    text-transform: uppercase;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 5px;
+    transition: 0.3s;
+    margin-bottom: 2em;
+}
+
+.image-btn:hover {
+    cursor: pointer;
+    background-color: #3D9970;
+    letter-spacing: 0.2em;
+    color: white;
 }

@@ -1,0 +1,63 @@
+.center {
+    margin: auto;
+    width: 60%;
+    align-self: center;
+}
+
+input[type=text], select {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password], select {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 70%;
+    background-color: #3D9970;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(31, 87, 36);
+}
+
+.image-div {
+    background-image: url("/twApp/public/images/office.jpg");
+    height: 100%;
+    z-index: -1;
+    width: 100%;
+    left: 0;
+    position: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    color: white;
+    font-size: large;
+}
+
+.send-to{
+    color: white;
+}

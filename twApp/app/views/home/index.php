@@ -6,15 +6,13 @@
 
   <title>RoSom</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <!-- <link rel="stylesheet" type="text/css" href="/twApp/public/css/home.css" />-->
- <!-- <link rel="stylesheet" type="text/css" href="public/css/menu.css" /> -->
-  <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" /> 
-  <link rel="stylesheet" href="/twApp/public/css/styles.css">
-  <link rel="stylesheet" href="public/libs/v6.2.1-dist/ol.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/twApp/public/css/home.css" />-->
+  <!-- <link rel="stylesheet" type="text/css" href="public/css/menu.css" /> -->
+  <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" />
+  <link rel="stylesheet" type="text/css" href="/twApp/public/css/styles.css" />
   <script language="javascript" type="text/javascript" src="public/js/main.js"></script>
   <script language="javascript" type="text/javascript" src="public/libs/v6.2.1-dist/ol.js"></script>
-  <script
-    src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,URL"></script>
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,URL"></script>
 
 
 </head>
@@ -29,12 +27,12 @@
         </a>
 
         <div class="menu-icons">
-         
-            <img class="open" src="public/images/icons8-menu-50.png"  alt="menu ">
-          
-         
-            <img class="close" src="public/images/icons8-cancel-50.png"  alt="cancel">
-          
+
+          <img class="open" src="public/images/icons8-menu-50.png" alt="menu ">
+
+
+          <img class="close" src="public/images/icons8-cancel-50.png" alt="cancel">
+
         </div>
 
         <ul class="listaPrincipala">
@@ -95,22 +93,32 @@
           <li><a href=#>Referinte</a></li>
         </ul>
 
-        <div  class="sign">
+        <div class="sign">
           <button onclick="window.location.href='auth/register'" class="log">
-              Sign in
-            </button>
+            Sign up
+          </button>
 
-           <button  onclick="window.location.href='auth/login'"class="log">
-               Log in
-            </button>
-          
+          <button onclick="window.location.href='auth/login'" class="log">
+            Log in
+          </button>
+
         </div>
       </nav>
 
     </div>
   </header>
-  <div id="map" class="map"></div><br>
-
+  <div class="image-div">
+    <div class="citat break">
+      <div class="center"><h1> RoSom - afla mai multe despre somajul din Romania </h1><br>
+      <img class="image-m" src="public/images/ro.png" alt="RoSom"></div>
+    </div>
+    <button onclick="window.location.href='auth/register'" class="image-btns image-btn">
+      <h3>Sign up</h3>
+    </button>
+    <button onclick="window.location.href='auth/login'" class="image-btns image-btn">
+      <h3>Log in</h3>
+    </button>
+  </div>
   <script src="public/js/menu.js"></script>
 </body>
 
