@@ -20,13 +20,9 @@ if (!empty($_POST)) {
             session_start();
             $_SESSION['user_id'] = $user->id;
             header('Location: http://localhost/twApp/');
-
-        }
-        else{
+        } else {
             echo 'Invalid UserName or Password';
-            
         }
-       
     }
 }
 
@@ -67,8 +63,9 @@ $result = mysqli_query($conn, $query);
 <head>
     <title>Login Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" /> -->
-    <link rel="stylesheet" type="text/css" href="/twApp/public/css/login.css" />
+    <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" />
+    <script language="javascript" type="text/javascript" src="/twApp/public/js/pass.js"></script>
+    <link rel="stylesheet" type="text/css" href="/twApp/public/css/auth.css" />
 </head>
 
 <body>
@@ -91,22 +88,26 @@ $result = mysqli_query($conn, $query);
     </header>
 
 
-    <div class="center">
-        <form action="" method="post" id="add_student_form">
-            <p>
-                <label for="name"><B>Nume:</B></label>
-                <br><input type="text" id="username" name="Nume" placeholder="Introduce-ti nume...">
-            </p>
-            <p>
-                <label for="pass"><b>Parola:</b></label>
-                <br><input type="password" id="pass" name="Parola" placeholder="Parola...">
-            </p>
+    <div class="image-div">
+        <div class="center">
+            <b>
+                <h2>Log in! :)</h2>
+            </b>
+            <form action="" method="post" id="add_student_form">
+                <p>
+                    <label for="name"><B>Nume:</B></label>
+                    <br><input type="text" id="username" name="Nume" placeholder="Numele de utilizator...">
+                </p>
+                <p>
+                    <label for="pass"><b>Parola:</b></label>
+                    <br><input type="password" id="pass" name="Parola" placeholder="Parola..."><input type="checkbox" onclick="myFunction()">Show Password
+                </p>
 
-            <p>
-                <input type="submit" name="submit" value="Login" formtarget="_self">
-            </p>
-        </form>
-
+                <p>
+                    <input type="submit" name="submit" value="Login" formtarget="_self">
+                </p>
+            </form>
+        </div>
     </div>
     </div>
 </body>

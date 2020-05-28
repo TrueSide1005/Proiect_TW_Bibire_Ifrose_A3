@@ -1,0 +1,67 @@
+#map{
+    height: 600px;
+    width: 75%;
+    margin:0 auto;
+    border-radius: 4px;
+    border: solid  rgb(31, 87, 36);
+}
+
+.picture{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+}
+
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+    text-align: left;
+}
+.legend i {
+    text-align: left;
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+.buton-hover {
+    display: inline;
+    letter-spacing: 0;
+    color:black;
+    font-size: medium;
+    border: none;
+}
+.buton-hover:hover,
+.buton-hover:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+  background-color:#3D9970;
+}
+
+.date-pe-judete{
+    display: inline;
+    border-radius: 4px;
+    font-size: medium;
+    color:black
+}
+
+.interactiv{
+    margin:0 auto;
+    text-align: center;
+}

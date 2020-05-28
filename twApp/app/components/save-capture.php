@@ -16,4 +16,4 @@ $nume = "map";
 $complete = $nume . ".jpeg";
 file_put_contents($complete, $image);
 // Sending response back to client
-echo "Are you sure you want to save the image? <a href=\"map.jpeg\" download>Yes</a>s";
+echo "Are you sure you want to save the image? <a href=\"/twApp/app/components/map.jpeg\" download>Yes</a>";
