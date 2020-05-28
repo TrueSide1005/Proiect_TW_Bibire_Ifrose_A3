@@ -1,10 +1,10 @@
 <?php
 
 # Make the userid and password constants
-DEFINE ('DB_USER', 'userweb');
+/*DEFINE ('DB_USER', 'userweb');
 DEFINE ('DB_HOST', 'localhost');
 DEFINE ('DB_PASSWORD', 'baza99');
-DEFINE ('DB_NAME', 'autentificare');
+DEFINE ('DB_NAME', 'autentificare');*/
 
 # Defines the data source name which is MySQL, local
 # and the DB to use
@@ -20,4 +20,18 @@ DEFINE ('DB_NAME', 'autentificare');
   include('db_error.php');
   exit();
 }*/
+
+
+$CONFIG = [
+  'servername' => "localhost",
+  'username' => "userweb",
+  'password' => 'baza99',
+  'db' => 'autentificare'
+];
+
+$conn = new mysqli($CONFIG["servername"], $CONFIG["username"], $CONFIG["password"], $CONFIG["db"]);
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
  ?>

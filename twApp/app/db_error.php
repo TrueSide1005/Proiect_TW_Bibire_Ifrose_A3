@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>PHP Tutorial</title>
+    <title>RoSom</title>
   </head>
   <body>
     <h1>Database Error</h1>
