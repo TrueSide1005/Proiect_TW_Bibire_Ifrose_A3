@@ -35,6 +35,7 @@ if (!empty($_POST)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" />
     <link rel="stylesheet" type="text/css" href="/twApp/public/css/auth.css" />
+    <script language="javascript" type="text/javascript" src="/twApp/public/js/pass.js"></script>
 </head>
 
 <body>
@@ -68,7 +69,7 @@ if (!empty($_POST)) {
                 </p>
                 <p>
                     <label for="pass"><b>Parola:</b></label>
-                    <br><input type="password" id="pass" name="Parola" placeholder="Parola...">
+                    <br><input type="password" id="pass" name="Parola" placeholder="Parola..."> <input type="checkbox" onclick="myFunction()"> Show Password
                 </p>
 
                 <p>
@@ -79,5 +80,6 @@ if (!empty($_POST)) {
     </div>
     </div>
 </body>
+<script src="/twApp/public/js/pass.js"></script>
 
 </html>
