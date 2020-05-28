@@ -10,8 +10,8 @@
   <!-- <link rel="stylesheet" type="text/css" href="public/css/menu.css" /> -->
   <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" />
   <link rel="stylesheet" type="text/css" href="/twApp/public/css/styles.css" />
-  <script language="javascript" type="text/javascript" src="public/js/main.js"></script>
-  <script language="javascript" type="text/javascript" src="public/libs/v6.2.1-dist/ol.js"></script>
+  <script language="javascript" type="text/javascript" src="/twApp/public/js/main.js"></script>
+  <script language="javascript" type="text/javascript" src="/twApp/public/libs/v6.2.1-dist/ol.js"></script>
   <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,URL"></script>
 
 
