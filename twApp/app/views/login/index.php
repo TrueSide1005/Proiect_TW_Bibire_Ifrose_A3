@@ -109,7 +109,6 @@ $result = mysqli_query($conn, $query);
             </form>
         </div>
     </div>
-    </div>
 </body>
 
 </html>
