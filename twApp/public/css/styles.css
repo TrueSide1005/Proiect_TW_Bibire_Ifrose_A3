@@ -2,6 +2,20 @@
     box-sizing: border-box;
 }
 
+.logout {
+    position: absolute;
+    right: 13px;
+    bottom: 13px;
+    padding: 3px;
+    display: inline;
+    border: solid white;
+}
+
+.logout:hover {
+    background-color: #5D6D7E;
+    cursor: pointer;
+}
+
 .image-div {
     background-image: url("/twApp/public/images/office.jpg");
     left: 0;
@@ -19,22 +33,6 @@
     background-size: cover;
     overflow: auto;
 }
-
-#bg-text {
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-    color: white;
-    font-weight: bold;
-    border: 3px solid #f1f1f1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 80%;
-    padding: 20px;
-    text-align: center;
-  }
 
 .break {
     flex-basis: 100%;
@@ -84,24 +82,25 @@
     color: white;
 }
 
-.bg-text {
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/opacity/see-through */
-    color: white;
-    font-weight: bold;
-    border: 3px solid #f1f1f1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#alert {
     z-index: 2;
-    width: 80%;
+    width: fit-content;
     padding: 20px;
-    text-align: center;
+    background-color: #f44336;
+    color: white;
 }
 
-#supra {
-    z-index: 2;
+#closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#closebtn:hover {
+    color: black;
 }

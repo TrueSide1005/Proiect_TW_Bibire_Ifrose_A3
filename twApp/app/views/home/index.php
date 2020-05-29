@@ -6,7 +6,7 @@ if ($s == 2) {
   if (is_numeric($_SESSION['user_id'])) {
     echo "<script> alert(\"Logged in!\");</script>";
   }
-} */?>
+} */ ?>
 
 <head>
   <meta charset="UTF-8">
@@ -19,7 +19,19 @@ if ($s == 2) {
   <link rel="stylesheet" href="/twApp/public/libs/v6.2.1-dist/ol.css">
   <script language="javascript" type="text/javascript" src="/twApp/public/js/main.js"></script>
   <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,URL"></script>
+  <script>
+    function logOut() {
 
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("delogare").innerHTML = "<div id=\"alert\" class=\"logout\"><span id=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span><strong>" + this.responseText + "</strong></div>";
+        }
+      };
+      xmlhttp.open("GET", "/twApp/app/models/logout.php", false);
+      xmlhttp.send();
+    }
+  </script>
 
 </head>
 
@@ -39,6 +51,9 @@ if ($s == 2) {
     <button onclick="window.location.href='auth/login'" class="image-btns image-btn">
       <h3>Log in</h3>
     </button>
+    <div id="delogare"></div>
+    <img class="logout" src="/twApp/public/images/logout.png" onclick="logOut()">
+
   </div>
   <script src="public/js/menu.js"></script>
 
