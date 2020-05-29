@@ -26,7 +26,7 @@ input[type=password], select {
 
 input[type=submit] {
     width: 70%;
-    background-color:#5D6D7E;
+    background-color: #5D6D7E;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -36,28 +36,53 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color:rgb(76, 99, 124);
+    background-color: rgb(76, 99, 124);
+}
+
+body{
+    background-image: url("/twApp/public/images/office.jpg");
 }
 
 .image-div {
-    background-image: url("/twApp/public/images/office.jpg");
-    height: 100%;
-    z-index: -1;
-    width: 100%;
     left: 0;
-    position: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    display: flex;
+    position: absolute;
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-start;
     flex-flow: row wrap;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    overflow: auto;
     color: white;
-    font-size: large;
 }
 
-.send-to{
+.send-to {
     color: white;
+}
+
+#alert {
+    width: 65%;
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+#closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#closebtn:hover {
+    color: black;
 }

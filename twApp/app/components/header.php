@@ -5,15 +5,6 @@
           <img class="logo" src="/twApp/public/images/s.png" alt="Sigla" style="height:3em">
         </a>
 
-        <div class="menu-icons">
-         
-            <img class="open" src="/twApp/public/images/icons8-menu-50.png"  alt="menu ">
-          
-         
-            <img class="close" src="/twApp/public/images/icons8-cancel-50.png"  alt="cancel">
-          
-        </div>
-
         <ul class="listaPrincipala">
 
           <li><a href="home">Organizare</a></li>
@@ -80,7 +71,7 @@
 
         <div  class="sign">
           <button onclick="window.location.href='/twApp/auth/register'" class="log">
-              Sign in
+              Sign up
             </button>
 
            <button  onclick="window.location.href='/twApp/auth/login'"class="log">

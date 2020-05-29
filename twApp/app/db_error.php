@@ -7,8 +7,7 @@
     <title>RoSom</title>
   </head>
   <body>
-    <h1>Database Error</h1>
-    <p><?php echo $err_msg; ?></p>
+    <?php echo "<script> alert(\"$err_msg\");</script>" ?>
   </body>
 </html>
 

@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="ro">
+<?php /*session_start();
+$s = session_status();
+if ($s == 2) {
+  if (is_numeric($_SESSION['user_id'])) {
+    echo "<script> alert(\"Logged in!\");</script>";
+  }
+} */?>
 
 <head>
   <meta charset="UTF-8">
@@ -17,7 +24,6 @@
 </head>
 
 <body>
-
   <?php require_once  __DIR__ . '/../../components/header.php' ?>
 
   <div class="image-div">

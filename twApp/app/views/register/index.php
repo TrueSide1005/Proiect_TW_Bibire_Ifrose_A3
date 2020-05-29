@@ -18,7 +18,7 @@
             <div class="sign">
 
                 <a href="register"> <button class="log" type="button">
-                        Sign in
+                        Sign up
                     </button> </a>
                 <a href="login"><button class="log" type="button">
                         Log in
@@ -95,10 +95,10 @@
                     </select>
                 </p>
                 <p>
+                    <section></section>
                     <input type="submit" name="submit" value="Sign in" formtarget="_self">
                     <br>Ai deja cont? <a href="login" class="send-to"><b>log in</b></a>!
-                    <!--formaction="/twApp/home" formtarget="_self"></p>-->
-                </p>
+                <!--</p>-->
             </form>
         </div>
     </div>
