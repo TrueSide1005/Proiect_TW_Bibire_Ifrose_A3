@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Login Page</title>
+    <title>SignUp Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" />
     <script language="javascript" type="text/javascript" src="/twApp/public/js/pass.js"></script>
@@ -34,7 +34,7 @@
             <b>
                 <h2>Sign up! It's free :)</h2>
             </b>
-            <form action="" method="POST" id="add_student_form" target="_blank">
+            <form class="form" action="" method="POST" id="add_student_form" target="_blank">
                 <p>
                     <label for="name"><B>Nume de utilizator:</B></label>
                     <br><input type="text" id="username" name="Nume" placeholder="Numele de utilizator...">
@@ -97,7 +97,7 @@
                 <p>
                     <section></section>
                     <input type="submit" name="submit" value="Sign in" formtarget="_self">
-                    <br>Ai deja cont? <a href="login" class="send-to"><b>log in</b></a>!
+                    <br><p>Ai deja cont? <a href="login" class="send-to"><b>log in</b></a>!</p>
                 <!--</p>-->
             </form>
         </div>

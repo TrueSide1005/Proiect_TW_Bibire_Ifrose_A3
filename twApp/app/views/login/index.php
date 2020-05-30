@@ -34,7 +34,7 @@
             <b>
                 <h2>Log in! :)</h2>
             </b>
-            <form action="" method="post" id="add_student_form">
+            <form class="form" action="" method="post" id="add_student_form">
                 <p>
                     <label for="name"><B>Nume:</B></label>
                     <br><input type="text" id="username" name="Nume" placeholder="Numele de utilizator...">
