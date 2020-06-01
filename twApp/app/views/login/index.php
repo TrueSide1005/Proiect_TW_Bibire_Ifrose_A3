@@ -10,25 +10,8 @@
 </head>
 
 <body>
-    <header>
-        <div class="barmenu">
-            <a href="/twApp/home">
-                <img class="logo" src="/twApp/public/images/s.png" alt="Sigla" style="height:3em">
-            </a>
-            <div class="sign">
-
-                <a href="register"> <button class="log" type="button">
-                        Sign up
-                    </button> </a>
-                <a href="login"><button class="log" type="button">
-                        Log in
-                    </button> </a>
-            </div>
-
-        </div>
-    </header>
-
-
+    <?php session_start();
+    require_once  __DIR__ . '/../../components/header.php' ?>
     <div class="image-div">
         <div class="center">
             <b>
@@ -44,7 +27,6 @@
                     <br><input type="password" id="pass" name="Parola" placeholder="Parola..."><input type="checkbox" onclick="myFunction()">Show Password
                 </p>
                 <?php
-                session_start();
                 global $conn;
                 require __DIR__ . '/../../config.php';
                 // Always start this first
@@ -77,55 +59,27 @@
                                     $s = session_status();
                                     if ($s == 2) {
                                         if (is_numeric($_SESSION['user_id'])) {
-                                            echo "<script> alert(\"Logged in!\");</script>";
+                                            echo "<div id=\"good\">
+                                            <span id=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span> 
+                                            <strong>V-ati logat!</strong> Bun venit!
+                                            </div>";
                                         }
                                     }
-                                    header('Location: http://localhost/twApp/');
                                 } else {
                                     echo "<div id=\"alert\">
-                        <span id=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span> 
-                        <strong>Log in esuat!</strong> Username sau parola incorecte!
-                      </div>";
+                                    <span id=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span> 
+                                    <strong>Log in esuat!</strong> Username sau parola incorecte!
+                                    </div>";
                                 }
                             } else {
                                 echo "<div id=\"alert\">
-                        <span id=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span> 
-                        <strong>Log in esuat!</strong> Username sau parola incorecte!
-                      </div>";
+                                <span id=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span> 
+                                <strong>Log in esuat!</strong> Username sau parola incorecte!
+                                </div>";
                             }
                         }
                     }
-                }
-
-                /*if(isset($_POST['Login']))   // it checks whether the user clicked login button or not 
-{
-     $user = $_POST['user'];
-     $pass = $_POST['pass'];
-
-     $query = "SELECT Judet, NumarTotal  FROM ratamartie2020";
-
-//execute query
-$result = mysqli_query($conn, $query);
-      if($user == "Ank" && $pass == "1234")  // username is  set to "Ank"  and Password   
-         {                                   // is 1234 by default     
-
-          $_SESSION['use']=$user;
-
-
-         echo '<script type="text/javascript"> window.open("home.php","_self");</script>';            //  On Successful Login redirects to home.php
-
-        }
-
-        else
-        {
-            echo "invalid UserName or Password";        
-        }
-}
- ?>*/
-
-
-
-                ?>
+                } ?>
                 <p>
                     <input type="submit" name="submit" value="Login" formtarget="_self">
                 </p>

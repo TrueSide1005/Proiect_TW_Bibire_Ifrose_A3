@@ -6,6 +6,14 @@
     border: solid #5D6D7E;
 }
 
+.ufi {
+    margin: 0 auto;
+}
+
+#overflowVisible{
+    left:0;
+}
+
 .picture {
     width: inherit;
     height: 100%;
@@ -76,6 +84,7 @@
 .center {
     z-index: -1;
     padding-bottom: 5em;
+    margin: 0 auto;
 }
 
 .container {

@@ -10,25 +10,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="barmenu">
-            <a href="/twApp">
-                <img class="logo" src="/twApp/public/images/s.png" alt="Sigla" style="height:3em">
-            </a>
-            <div class="sign">
-
-                <a href="register"> <button class="log" type="button">
-                        Sign up
-                    </button> </a>
-                <a href="login"><button class="log" type="button">
-                        Log in
-                    </button> </a>
-            </div>
-
-        </div>
-    </header>
-
-
+    <?php require_once  __DIR__ . '/../../components/header.php' ?>
     <div class="image-div">
         <div class="center">
             <b>
@@ -97,8 +79,9 @@
                 <p>
                     <section></section>
                     <input type="submit" name="submit" value="Sign in" formtarget="_self">
-                    <br><p>Ai deja cont? <a href="login" class="send-to"><b>log in</b></a>!</p>
-                <!--</p>-->
+                    <br>
+                    <p>Ai deja cont? <a href="login" class="send-to"><b>log in</b></a>!</p>
+                    <!--</p>-->
             </form>
         </div>
     </div>

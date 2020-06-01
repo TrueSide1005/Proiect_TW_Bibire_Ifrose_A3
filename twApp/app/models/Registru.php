@@ -18,7 +18,7 @@ class Registru
 
             # Validate Data with Regular Expressions
 
-        } elseif (!preg_match("/[a-zA-Z]{3,100}$/", $nume)) {
+        } elseif (!preg_match("/[a-zA-Z]{0,9}$/", $nume)) {
             $err_msg = "Name Not Valid";
             require __DIR__ . '/../db_error.php';
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {

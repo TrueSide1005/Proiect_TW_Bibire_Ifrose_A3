@@ -29,12 +29,12 @@ function buildMap(ok) {
     function getColor(d) {
         return d > 7.5 ? '#800026' :
             d > 6.25 ? '#BD0026' :
-            d > 5 ? '#E31A1C' :
-            d > 3.75 ? '#FC4E2A' :
-            d > 2.5 ? '#FD8D3C' :
-            d > 1.25 ? '#FEB24C' :
-            d > 0.5 ? '#FED976' :
-            '#FFEDA0';
+                d > 5 ? '#E31A1C' :
+                    d > 3.75 ? '#FC4E2A' :
+                        d > 2.5 ? '#FD8D3C' :
+                            d > 1.25 ? '#FEB24C' :
+                                d > 0.5 ? '#FED976' :
+                                    '#FFEDA0';
     }
 
     function style(feature) {
@@ -73,15 +73,18 @@ function buildMap(ok) {
         info.update();
     }
 
-    function zoomToFeature(e) {
-        map.fitBounds(e.target.getBounds());
+    function pop(e){
+        var id = e.target.feature.id;
+        var s=somaj[id-1];
+        var text="Rata somajului "+s+"%";
+        e.target.bindPopup(text).openPopup();
     }
 
     function onEachFeature(feature, layer) {
         layer.on({
             mouseover: highlightFeature,
             mouseout: resetHighlight,
-            click: zoomToFeature
+            click: pop
         });
     }
 
@@ -92,14 +95,14 @@ function buildMap(ok) {
 
     var info = L.control();
 
-    info.onAdd = function(map) {
+    info.onAdd = function (map) {
         this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
         this.update();
         return this._div;
     };
 
     // method that we will use to update the control based on feature properties passed
-    info.update = function(props) {
+    info.update = function (props) {
         this._div.innerHTML = '<h4>Rata somajului</h4>' + (props ?
             '<b>' + props.Name + '</b><br />' + props.somaj + '\%' :
             'Plasati cursorul peste un judet');
@@ -111,10 +114,10 @@ function buildMap(ok) {
         position: 'bottomright'
     });
 
-    legend.onAdd = function(map) {
+    legend.onAdd = function (map) {
 
         var div = L.DomUtil.create('div', 'info legend'),
-            grades = [0, 0.5, 1.25, 2.5, 3.75, 5, 6.25, 7.5],
+            grades = [0, 0.25, 0.75, 1.75, 3.25, 4.0, 5.25, 6],
             labels = [];
 
         // loop through our density intervals and generate a label with a colored square for each interval
@@ -128,17 +131,5 @@ function buildMap(ok) {
     };
 
     legend.addTo(map);
-    
-    var printProvider = L.print.provider({
-        method: 'GET',
-        url: ' http://path/to/mapfish/print',
-        autoLoad: true,
-        dpi: 90
-     });
-     
-     var printControl = L.control.print({
-        provider: printProvider
-     });        
-     map.addControl(printControl);
 }
 

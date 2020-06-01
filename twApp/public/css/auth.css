@@ -72,6 +72,13 @@ body{
     color: white;
 }
 
+#good {
+    width: 65%;
+    padding: 20px;
+    background-color: #1a6e17;
+    color: white;
+}
+
 #closebtn {
     margin-left: 15px;
     color: white;
