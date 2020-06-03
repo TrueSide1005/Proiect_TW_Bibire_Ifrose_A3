@@ -3,6 +3,7 @@
 
 <head>
     <title>SignUp Page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/twApp/public/images/flag.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" />
     <script language="javascript" type="text/javascript" src="/twApp/public/js/pass.js"></script>

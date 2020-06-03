@@ -2,6 +2,7 @@
 <html lang="ro">
 
 <head>
+    <link rel="shortcut icon" type="image/x-icon" href="/twApp/public/images/flag.ico"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistici cartografice</title>
@@ -15,6 +16,7 @@
         var map;
         var a;
         var ok = 0;
+
         function showUser(str) {
             if (str == "") {
                 document.getElementById("txtHint").innerHTML = "";
@@ -38,8 +40,11 @@
     <script>
         function doCapture() {
             window.scrollTo(0, 0);
-            html2canvas(document.getElementById("map"), {scrollY: -window.scrollY, scrollX: -window.scrollX}).then(function(canvas) {
-                scale=10;
+            html2canvas(document.getElementById("map"), {
+                scrollY: -window.scrollY,
+                scrollX: -window.scrollX
+            }).then(function(canvas) {
+                scale = 10;
                 var link = document.getElementById('link');
                 link.setAttribute('download', 'map.png');
                 link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
@@ -52,7 +57,7 @@
         function doSVG() {
             window.scrollTo(0, 0);
             html2canvas(document.getElementById("map")).then(function(canvas) {
-                scale= 10;
+                scale = 10;
                 var abc = "<svg width=\"" + canvas.width + "\" height=\"" + canvas.height + "\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><image xlink:href=\"" + canvas.toDataURL("image/png").replace("image/png", "image/octet-stream") + "\" width=\"" + canvas.width + "\" height=\"" + canvas.height + "\" x=\"0\" y=\"0\"></image></svg>";
                 var dataUrl = 'data:image/svg+xml,' + abc;
                 var link = document.getElementById('link');

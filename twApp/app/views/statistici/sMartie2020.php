@@ -2,10 +2,11 @@
 <html lang="ro">
 
 <head>
-    <title>RoSom</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/twApp/public/images/flag.ico" />
+    <title>Statistici</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css">
+    <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css">
 
     <link rel="stylesheet" type="text/css" href="/twApp/public/css/file.css" />
     <!--<link rel="stylesheet" type="text/css" href="/twApp/public/css/diagram.css" />-->
