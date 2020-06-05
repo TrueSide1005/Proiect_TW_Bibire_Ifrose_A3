@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 
 <head>
     <title>SignUp Page</title>
+    <meta name="description" content="This is my page">
     <link rel="shortcut icon" type="image/x-icon" href="/twApp/public/images/flag.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" />
@@ -19,7 +20,7 @@
             </b>
             <form class="form" action="" method="POST" id="add_student_form" target="_blank">
                 <p>
-                    <label for="name"><B>Nume de utilizator:</B></label>
+                    <label for="username"><B>Nume de utilizator:</B></label>
                     <br><input type="text" id="username" name="Nume" placeholder="Numele de utilizator...">
                 </p>
                 <p>
@@ -28,7 +29,8 @@
                 </p>
                 <p>
                     <label for="pass"><b>Parola:</b></label>
-                    <br><input type="password" id="pass" name="Parola" placeholder="Parola..."><input type="checkbox" onclick="myFunction()">Show Password
+                    <br><input type="password" id="pass" name="Parola" placeholder="Parola...">
+                    <input id="show" type="checkbox" onclick="myFunction()"><label for="show">Show Password</label>
                 </p>
                 <p>
                     <label for="Judet"><b>Judet:</b></label>
@@ -78,8 +80,8 @@
                     </select>
                 </p>
                 <p>
-                    <section></section>
-                    <input type="submit" name="submit" value="Sign in" formtarget="_self">
+                    <label for="submit" class="invisible">t</label>
+                    <input type="submit" id="submit" name="submit" value="Sign in" formtarget="_self">
                     <br>
                     <p>Ai deja cont? <a href="login" class="send-to"><b>log in</b></a>!</p>
                     <!--</p>-->

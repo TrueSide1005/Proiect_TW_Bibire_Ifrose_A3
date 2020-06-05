@@ -3,6 +3,7 @@
 
 <head>
     <title>Login Page</title>
+    <meta name="description" content="This is my page">
     <link rel="shortcut icon" type="image/x-icon" href="/twApp/public/images/flag.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" />
@@ -20,12 +21,14 @@
             </b>
             <form class="form" action="" method="post" id="add_student_form">
                 <p>
-                    <label for="name"><B>Nume:</B></label>
+                    <label for="username"><B>Nume:</B></label>
                     <br><input type="text" id="username" name="Nume" placeholder="Numele de utilizator...">
                 </p>
                 <p>
                     <label for="pass"><b>Parola:</b></label>
-                    <br><input type="password" id="pass" name="Parola" placeholder="Parola..."><input type="checkbox" onclick="myFunction()">Show Password
+                    <br><input type="password" id="pass" name="Parola" placeholder="Parola...">
+                    <input type="checkbox" id="show" onclick="myFunction()">
+                    <label for="show">Show Password</label>
                 </p>
                 <?php
                 global $conn;
@@ -82,7 +85,8 @@
                     }
                 } ?>
                 <p>
-                    <input type="submit" name="submit" value="Login" formtarget="_self">
+                    <input id="submit" type="submit" name="submit" value="Login" formtarget="_self">
+                    <label for="submit" class="invisible">S</label>
                 </p>
             </form>
 

@@ -15,13 +15,13 @@
 }
 
 .picture {
-    width: inherit;
+    width: 100%;
     height: 100%;
     position: center;
     margin: 0 auto;
     background-position: center;
-    background-repeat: repeat;
-    background-image: url("/twApp/public/images/background.png");
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#904e95, #e96443);
     background-size: contain;
 }
 
@@ -107,4 +107,8 @@ hr {
 #titlu {
     font-size: 25px;
     margin-top: 1em;
+}
+
+.invisible{
+    opacity: 0;
 }

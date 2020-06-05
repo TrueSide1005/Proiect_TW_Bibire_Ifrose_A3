@@ -2,9 +2,8 @@
   <div class="barmenu">
     <nav>
       <a href="/twApp">
-        <img class="logo" src="/twApp/public/images/s.png" alt="Sigla" style="height:3em">
+        <img class="logo" src="/twApp/public/images/s.png" alt="Sigla" style="height:3em" >
       </a>
-
       <div class="menu-icons">
 
         <img class="open" src="/twApp/public/images/icons8-menu-50.png" alt="menu ">
@@ -13,7 +12,6 @@
         <img class="close" src="/twApp/public/images/icons8-cancel-50.png" alt="cancel">
 
       </div>
-
       <ul class="listaPrincipala">
 
         <li><a href="home">Organizare</a></li>
