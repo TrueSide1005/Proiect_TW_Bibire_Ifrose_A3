@@ -1,6 +1,6 @@
 <?php
 
-//require_once "map-routes.php";
+require_once "map-routes.php";
 require_once "month-statistics-routes.php";
 //require_once "statistics-citys-routes.php";
 
@@ -9,8 +9,8 @@ header("Access-Control-Allow-Headers: *");
 
 $allHeaders = getallheaders();
 
-$allRoutes = [ 
-    // ...$mapRoutes,
+$allRoutes = [
+    ...$mapRoutes,
     ...$monthStatisticsRoutes,
     // ...$statisticsCitysRoutes,
     // ...other-arrays-routes 

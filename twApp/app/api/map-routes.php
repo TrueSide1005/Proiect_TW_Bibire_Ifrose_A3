@@ -1,0 +1,568 @@
+<?php
+
+$mapRoutes = [
+    [
+        "method" => "GET",
+        //"middlewares" => ["IsLoggedIn"],
+        "route" => "map/:month/total",
+        "handler" => "getMapRoutes"
+    ],
+    [
+        "method" => "GET",
+        //"middlewares" => ["IsLoggedIn"],
+        "route" => "map/:month/total/:id",
+        "handler" => "getMapRoutesTotalId"
+    ],
+    [
+        "method" => "GET",
+        //"middlewares" => ["IsLoggedIn"],
+        "route" => "map/:month/femei/:id",
+        "handler" => "getMapRoutesFemeiId"
+    ],
+    [
+        "method" => "GET",
+        //"middlewares" => ["IsLoggedIn"],
+        "route" => "map/:month/barbati/:id",
+        "handler" => "getMapRoutesBarbatiId"
+    ],
+    [
+        "method" => "GET",
+        //"middlewares" => ["IsLoggedIn"],
+        "route" => "map/:month/femei",
+        "handler" => "getMapRoutesFemei"
+    ],
+    [
+        "method" => "GET",
+        //"middlewares" => ["IsLoggedIn"],
+        "route" => "map/:month/barbati",
+        "handler" => "getMapRoutesBarbati"
+    ],
+    [
+        "method" => "GET",
+        //"middlewares" => ["IsLoggedIn"],
+        "route" => "map/:month/",
+        "handler" => "getMapRoutesAll"
+    ],
+    [
+        "method" => "GET",
+        //"middlewares" => ["IsLoggedIn"],
+        "route" => "map/:month/:id",
+        "handler" => "getMapRoutesId"
+    ],
+    [
+        "method" => "GET",
+        //"middlewares" => ["IsLoggedIn"],
+        "route" => "map/:id",
+        "handler" => "getMapRoutesComplete"
+    ],
+];
+
+global $conn;
+
+function getMapRoutes($req)
+{
+    Response::status(200);
+    $coloana = "";
+    switch ($req['params']['month']) {
+        case 'martie2020':
+            $coloana = "martie2020_total";
+            break;
+        case 'februarie2020':
+            $coloana = "februarie2020_total";
+            break;
+        case 'ianuarie2020':
+            $coloana = "ianuarie2020_total";
+            break;
+        case 'decembrie2019':
+            $coloana = "decembrie2019_total";
+            break;
+        case 'noiembrie2019':
+            $coloana = "noiembrie2019_total";
+            break;
+        case 'octombrie2019':
+            $coloana = "octombrie2019_total";
+            break;
+        case 'septembrie2019':
+            $coloana = "septembrie2019_total";
+            break;
+        case 'august2019':
+            $coloana = "august2019_total";
+            break;
+        case 'iulie2019':
+            $coloana = "iulie2019_total";
+            break;
+        case 'iunie2019':
+            $coloana = "iunie2019_total";
+            break;
+        case 'mai2019':
+            $coloana = "mai2019_total";
+            break;
+        case 'aprilie2019':
+            $coloana = "aprilie2019_total";
+            break;
+        default:
+            $coloana = "404";
+            break;
+    }
+    if ($coloana != "404") {
+        require __DIR__ . '/../config.php';
+        $result = mysqli_query($conn, "SELECT id, nume, " . $coloana . " FROM data ");
+        //echo $result;
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+        Response::json($data);
+    } else {
+        handle404();
+    }
+}
+
+function getMapRoutesFemei($req)
+{
+    Response::status(200);
+    $coloana = "";
+    switch ($req['params']['month']) {
+        case 'martie2020':
+            $coloana = "martie2020_femei";
+            break;
+        case 'februarie2020':
+            $coloana = "februarie2020_femei";
+            break;
+        case 'ianuarie2020':
+            $coloana = "ianuarie2020_femei";
+            break;
+        case 'decembrie2019':
+            $coloana = "decembrie2019_femei";
+            break;
+        case 'noiembrie2019':
+            $coloana = "noiembrie2019_femei";
+            break;
+        case 'octombrie2019':
+            $coloana = "octombrie2019_femei";
+            break;
+        case 'septembrie2019':
+            $coloana = "septembrie2019_femei";
+            break;
+        case 'august2019':
+            $coloana = "august2019_femei";
+            break;
+        case 'iulie2019':
+            $coloana = "iulie2019_femei";
+            break;
+        case 'iunie2019':
+            $coloana = "iunie2019_femei";
+            break;
+        case 'mai2019':
+            $coloana = "mai2019_femei";
+            break;
+        case 'aprilie2019':
+            $coloana = "aprilie2019_femei";
+            break;
+        default:
+            $coloana = "404";
+            break;
+    }
+    if ($coloana != "404") {
+        require __DIR__ . '/../config.php';
+        $result = mysqli_query($conn, "SELECT id, nume, " . $coloana . " FROM data ");
+        //echo $result;
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+        Response::json($data);
+    } else {
+        handle404();
+    }
+}
+
+function getMapRoutesBarbati($req)
+{
+    Response::status(200);
+    $coloana = "";
+    switch ($req['params']['month']) {
+        case 'martie2020':
+            $coloana = "martie2020_barbati";
+            break;
+        case 'februarie2020':
+            $coloana = "februarie2020_barbati";
+            break;
+        case 'ianuarie2020':
+            $coloana = "ianuarie2020_barbati";
+            break;
+        case 'decembrie2019':
+            $coloana = "decembrie2019_barbati";
+            break;
+        case 'noiembrie2019':
+            $coloana = "noiembrie2019_barbati";
+            break;
+        case 'octombrie2019':
+            $coloana = "octombrie2019_barbati";
+            break;
+        case 'septembrie2019':
+            $coloana = "septembrie2019_barbati";
+            break;
+        case 'august2019':
+            $coloana = "august2019_barbati";
+            break;
+        case 'iulie2019':
+            $coloana = "iulie2019_barbati";
+            break;
+        case 'iunie2019':
+            $coloana = "iunie2019_barbati";
+            break;
+        case 'mai2019':
+            $coloana = "mai2019_barbati";
+            break;
+        case 'aprilie2019':
+            $coloana = "aprilie2019_barbati";
+            break;
+        default:
+            $coloana = "404";
+            break;
+    }
+    if ($coloana != "404") {
+        require __DIR__ . '/../config.php';
+        $result = mysqli_query($conn, "SELECT id, nume, " . $coloana . " FROM data ");
+        //echo $result;
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+        Response::json($data);
+    } else {
+        handle404();
+    }
+}
+
+function getMapRoutesAll($req)
+{
+    Response::status(200);
+    $coloana = "";
+    switch ($req['params']['month']) {
+        case 'martie2020':
+            $coloana = "martie2020_total, martie2020_femei, martie2020_barbati";
+            break;
+        case 'februarie2020':
+            $coloana = "februarie2020_total, februarie2020_femei, februarie2020_barbati";
+            break;
+        case 'ianuarie2020':
+            $coloana = "ianuarie2020_total, ianuarie2020_femei, ianuarie2020_barbati";
+            break;
+        case 'decembrie2019':
+            $coloana = "decembrie2019_total, decembrie2019_femei, decembrie2019_barbati";
+            break;
+        case 'noiembrie2019':
+            $coloana = "noiembrie2019_total, noiembrie2019_femei, noiembrie2019_barbati";
+            break;
+        case 'octombrie2019':
+            $coloana = "octombrie2019_total, octombrie2019_femei, octombrie2019_barbati";
+            break;
+        case 'septembrie2019':
+            $coloana = "septembrie2019_total, septembrie2019_femei, septembrie2019_barbati";
+            break;
+        case 'august2019':
+            $coloana = "august2019_total, august2019_femei, august2019_barbati";
+            break;
+        case 'iulie2019':
+            $coloana = "iulie2019_total, iulie2019_femei, iulie2019_barbati";
+            break;
+        case 'iunie2019':
+            $coloana = "iunie2019_total, iunie2019_femei, iunie2019_barbati";
+            break;
+        case 'mai2019':
+            $coloana = "mai2019_total, mai2019_femei, mai2019_barbati";
+            break;
+        case 'aprilie2019':
+            $coloana = "aprilie2019_total, aprilie2019_femei, aprilie2019_barbati";
+            break;
+        default:
+            $coloana = "404";
+            break;
+    }
+    require __DIR__ . '/../config.php';
+    if ($coloana != "404") {
+        $result = mysqli_query($conn, "SELECT id, nume, " . $coloana . " FROM data ");
+        //echo $result;
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+        Response::json($data);
+    } else {
+        handle404();
+    }
+}
+
+function getMapRoutesId($req)
+{
+    Response::status(200);
+    $coloana = "";
+    switch ($req['params']['month']) {
+        case 'martie2020':
+            $coloana = "martie2020_total, martie2020_femei, martie2020_barbati";
+            break;
+        case 'februarie2020':
+            $coloana = "februarie2020_total, februarie2020_femei, februarie2020_barbati";
+            break;
+        case 'ianuarie2020':
+            $coloana = "ianuarie2020_total, ianuarie2020_femei, ianuarie2020_barbati";
+            break;
+        case 'decembrie2019':
+            $coloana = "decembrie2019_total, decembrie2019_femei, decembrie2019_barbati";
+            break;
+        case 'noiembrie2019':
+            $coloana = "noiembrie2019_total, noiembrie2019_femei, noiembrie2019_barbati";
+            break;
+        case 'octombrie2019':
+            $coloana = "octombrie2019_total, octombrie2019_femei, octombrie2019_barbati";
+            break;
+        case 'septembrie2019':
+            $coloana = "septembrie2019_total, septembrie2019_femei, septembrie2019_barbati";
+            break;
+        case 'august2019':
+            $coloana = "august2019_total, august2019_femei, august2019_barbati";
+            break;
+        case 'iulie2019':
+            $coloana = "iulie2019_total, iulie2019_femei, iulie2019_barbati";
+            break;
+        case 'iunie2019':
+            $coloana = "iunie2019_total, iunie2019_femei, iunie2019_barbati";
+            break;
+        case 'mai2019':
+            $coloana = "mai2019_total, mai2019_femei, mai2019_barbati";
+            break;
+        case 'aprilie2019':
+            $coloana = "aprilie2019_total, aprilie2019_femei, aprilie2019_barbati";
+            break;
+        default:
+            $coloana = "404";
+            break;
+    }
+    require __DIR__ . '/../config.php';
+    $param = "{$req['params']['id']}";
+    if ($coloana != "404" && $param <= 41 && is_numeric($param)) {
+        $stmt = $conn->prepare("SELECT id, nume, " . $coloana . " FROM data WHERE  id = ?");
+        $stmt->bind_param('s', $param);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+
+        Response::json($data);
+    } else {
+        handle404();
+    }
+}
+
+function getMapRoutesComplete($req)
+{
+    Response::status(200);
+    require __DIR__ . '/../config.php';
+    $param = "{$req['params']['id']}";
+    if ($param <= 41 && is_numeric($param)) {
+        $stmt = $conn->prepare("SELECT * FROM data WHERE  id = ?");
+        $stmt->bind_param('s', $param);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+        Response::json($data);
+    } else {
+        handle404();
+    }
+}
+
+function getMapRoutesTotalId($req)
+{
+    Response::status(200);
+    $coloana = "";
+    switch ($req['params']['month']) {
+        case 'martie2020':
+            $coloana = "martie2020_total";
+            break;
+        case 'februarie2020':
+            $coloana = "februarie2020_total";
+            break;
+        case 'ianuarie2020':
+            $coloana = "ianuarie2020_total";
+            break;
+        case 'decembrie2019':
+            $coloana = "decembrie2019_total";
+            break;
+        case 'noiembrie2019':
+            $coloana = "noiembrie2019_total";
+            break;
+        case 'octombrie2019':
+            $coloana = "octombrie2019_total";
+            break;
+        case 'septembrie2019':
+            $coloana = "septembrie2019_total";
+            break;
+        case 'august2019':
+            $coloana = "august2019_total";
+            break;
+        case 'iulie2019':
+            $coloana = "iulie2019_total";
+            break;
+        case 'iunie2019':
+            $coloana = "iunie2019_total";
+            break;
+        case 'mai2019':
+            $coloana = "mai2019_total";
+            break;
+        case 'aprilie2019':
+            $coloana = "aprilie2019_total";
+            break;
+        default:
+            $coloana = "404";
+            break;
+    }
+    require __DIR__ . '/../config.php';
+    $param = "{$req['params']['id']}";
+    if ($coloana != 404 && $param <= 41 && is_numeric($param)) {
+        $stmt = $conn->prepare("SELECT id, nume, " . $coloana . " FROM data WHERE  id = ?");
+        $stmt->bind_param('s', $param);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+
+        Response::json($data);
+    } else {
+        handle404();
+    }
+}
+
+function getMapRoutesFemeiId($req)
+{
+    Response::status(200);
+    $coloana = "";
+    switch ($req['params']['month']) {
+        case 'martie2020':
+            $coloana = "martie2020_femei";
+            break;
+        case 'februarie2020':
+            $coloana = "februarie2020_femei";
+            break;
+        case 'ianuarie2020':
+            $coloana = "ianuarie2020_femei";
+            break;
+        case 'decembrie2019':
+            $coloana = "decembrie2019_femei";
+            break;
+        case 'noiembrie2019':
+            $coloana = "noiembrie2019_femei";
+            break;
+        case 'octombrie2019':
+            $coloana = "octombrie2019_femei";
+            break;
+        case 'septembrie2019':
+            $coloana = "septembrie2019_femei";
+            break;
+        case 'august2019':
+            $coloana = "august2019_femei";
+            break;
+        case 'iulie2019':
+            $coloana = "iulie2019_femei";
+            break;
+        case 'iunie2019':
+            $coloana = "iunie2019_femei";
+            break;
+        case 'mai2019':
+            $coloana = "mai2019_femei";
+            break;
+        case 'aprilie2019':
+            $coloana = "aprilie2019_femei";
+            break;
+        default:
+            $coloana = "404";
+            break;
+    }
+    require __DIR__ . '/../config.php';
+    $param = "{$req['params']['id']}";
+    if ($coloana != 404 && $param <= 41 && is_numeric($param)) {
+        $stmt = $conn->prepare("SELECT id, nume, " . $coloana . " FROM data WHERE  id = ?");
+        $stmt->bind_param('s', $param);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+
+        Response::json($data);
+    } else {
+        handle404();
+    }
+}
+
+function getMapRoutesBarbatiId($req)
+{
+    Response::status(200);
+    $coloana = "";
+    switch ($req['params']['month']) {
+        case 'martie2020':
+            $coloana = "martie2020_barbati";
+            break;
+        case 'februarie2020':
+            $coloana = "februarie2020_barbati";
+            break;
+        case 'ianuarie2020':
+            $coloana = "ianuarie2020_barbati";
+            break;
+        case 'decembrie2019':
+            $coloana = "decembrie2019_barbati";
+            break;
+        case 'noiembrie2019':
+            $coloana = "noiembrie2019_barbati";
+            break;
+        case 'octombrie2019':
+            $coloana = "octombrie2019_barbati";
+            break;
+        case 'septembrie2019':
+            $coloana = "septembrie2019_barbati";
+            break;
+        case 'august2019':
+            $coloana = "august2019_barbati";
+            break;
+        case 'iulie2019':
+            $coloana = "iulie2019_barbati";
+            break;
+        case 'iunie2019':
+            $coloana = "iunie2019_barbati";
+            break;
+        case 'mai2019':
+            $coloana = "mai2019_barbati";
+            break;
+        case 'aprilie2019':
+            $coloana = "aprilie2019_barbati";
+            break;
+        default:
+            $coloana = "404";
+            break;
+    }
+    require __DIR__ . '/../config.php';
+    $param = "{$req['params']['id']}";
+    if ($coloana != 404 && $param <= 41 && is_numeric($param)) {
+        $stmt = $conn->prepare("SELECT id, nume, " . $coloana . " FROM data WHERE  id = ?");
+        $stmt->bind_param('s', $param);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+
+        Response::json($data);
+    } else {
+        handle404();
+    }
+}
