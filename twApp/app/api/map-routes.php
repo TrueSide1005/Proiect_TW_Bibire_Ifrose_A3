@@ -40,8 +40,14 @@ $mapRoutes = [
     [
         "method" => "GET",
         //"middlewares" => ["IsLoggedIn"],
-        "route" => "map/:month/",
+        "route" => "map/:month",
         "handler" => "getMapRoutesAll"
+    ],
+    [
+        "method" => "GET",
+        //"middlewares" => ["IsLoggedIn"],
+        "route" => "map/id/:id",
+        "handler" => "getMapRoutesComplete"
     ],
     [
         "method" => "GET",
@@ -49,18 +55,13 @@ $mapRoutes = [
         "route" => "map/:month/:id",
         "handler" => "getMapRoutesId"
     ],
-    [
-        "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
-        "route" => "map/:id",
-        "handler" => "getMapRoutesComplete"
-    ],
 ];
 
 global $conn;
 
 function getMapRoutes($req)
 {
+    //echo "getMapRoutes";
     Response::status(200);
     $coloana = "";
     switch ($req['params']['month']) {
@@ -120,6 +121,7 @@ function getMapRoutes($req)
 
 function getMapRoutesFemei($req)
 {
+    //echo "getMapRoutesFemei";
     Response::status(200);
     $coloana = "";
     switch ($req['params']['month']) {
@@ -179,6 +181,7 @@ function getMapRoutesFemei($req)
 
 function getMapRoutesBarbati($req)
 {
+    //echo "getMapRoutesBarbati";
     Response::status(200);
     $coloana = "";
     switch ($req['params']['month']) {
@@ -238,6 +241,7 @@ function getMapRoutesBarbati($req)
 
 function getMapRoutesAll($req)
 {
+    //echo "getMapRoutesAll";
     Response::status(200);
     $coloana = "";
     switch ($req['params']['month']) {
@@ -297,6 +301,7 @@ function getMapRoutesAll($req)
 
 function getMapRoutesId($req)
 {
+    //echo "getMapRoutesId";
     Response::status(200);
     $coloana = "";
     switch ($req['params']['month']) {
@@ -360,10 +365,11 @@ function getMapRoutesId($req)
 
 function getMapRoutesComplete($req)
 {
+    //echo "getMapRoutesComplete";
     Response::status(200);
     require __DIR__ . '/../config.php';
     $param = "{$req['params']['id']}";
-    if ($param <= 41 && is_numeric($param)) {
+    if ($param <= 41 /*&& is_numeric($param)*/) {
         $stmt = $conn->prepare("SELECT * FROM data WHERE  id = ?");
         $stmt->bind_param('s', $param);
         $stmt->execute();
@@ -380,6 +386,7 @@ function getMapRoutesComplete($req)
 
 function getMapRoutesTotalId($req)
 {
+    //echo "getMapRoutesTotalId";
     Response::status(200);
     $coloana = "";
     switch ($req['params']['month']) {
@@ -443,6 +450,7 @@ function getMapRoutesTotalId($req)
 
 function getMapRoutesFemeiId($req)
 {
+    //echo ("getMapRoutesFemeiId");
     Response::status(200);
     $coloana = "";
     switch ($req['params']['month']) {
@@ -506,6 +514,7 @@ function getMapRoutesFemeiId($req)
 
 function getMapRoutesBarbatiId($req)
 {
+    //echo ("getMapRoutesBarbatiId");
     Response::status(200);
     $coloana = "";
     switch ($req['params']['month']) {
