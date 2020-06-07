@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RunDa Documentatie</title>
+
+	<link rel="stylesheet" href="css/scholarly.min.css">
+	<script src="js/scholarly.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>RunDa Scholarly HTML</h1>
+	</header>
+
+	<div role="contentinfo">
+		<ol role="directory">
+			<li>
+				<a href="#autori">
+					<span> 1. </span>
+					Autori
+				</a>
+			</li>
+			<li>
+				<a href="#introducere">
+					<span> 2. </span>
+					Introducere
+				</a>
+			</li>
+			<li>
+				<a href="#database">
+					<span> 3. </span>
+					Database
+				</a>
+
+				<ol role="directory">
+					<li>
+						<a href="#usersdb">
+							<span> 3.1. </span>
+							Tabelul Registru
+						</a>
+					</li>
+					<li>
+						<a href="#datadb">
+							<span> 3.4. </span>
+							Tabelul Data
+						</a>
+					</li>
+					<li>
+						<a href="#ratadb">
+							<span> 3.4. </span>
+							Tabelul RataLunaAnul
+						</a>
+					</li>
+					<li>
+						<a href="#mediidb">
+							<span> 3.5. </span>
+							Tabelul MediiLunaAnul
+						</a>
+					</li>
+					<li>
+						<a href="#educatiedb">
+							<span> 3.5. </span>
+							Tabelul EducatieLunaAnul
+						</a>
+					</li>
+					<li>
+						<a href="#varstedb">
+							<span> 3.6. </span>
+							Tabelul VarsteLunaAnul
+						</a>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<a href="#front-end">
+					<span> 4. </span>
+					Front End
+				</a>
+
+				<ol role="directory">
+					<li>
+						<a href="#signupfront">
+							<span> 4.1. </span>
+							Sign-Up
+						</a>
+					</li>
+					<li>
+						<a href="#loginfront">
+							<span> 4.2. </span>
+							Login
+						</a>
+					</li>
+					<li>
+						<a href="#logoutfront">
+							<span> 4.3. </span>
+							Logout
+						</a>
+					</li>
+					<li>
+						<a href="#hartafront">
+							<span> 4.4. </span>
+							Resurse Cartografice
+						</a>
+					</li>
+					<li>
+						<a href="#statisticifront">
+							<span> 4.5. </span>
+							Statistici
+						</a>
+					</li>
+					<li>
+						<a href="#referintefront">
+							<span> 4.5. </span>
+							Statistici
+						</a>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<a href="#back-end">
+					<span> 5. </span>
+					Back End
+				</a>
+
+				<ol role="directory">
+					<li>
+						<a href="#signuploginlogoutback">
+							<span> 5.1. </span>
+							Sign-Up & Login & Logut
+						</a>
+					</li>
+					<li>
+						<a href="#hartaback-end">
+							<span> 5.2. </span>
+							Harta
+						</a>
+					</li>
+					<li>
+						<a href="#statisticiback-end">
+							<span> 5.3. </span>
+							Statisti
+						</a>
+					</li>
+					
+				</ol>
+			</li>
+		</ol>
+	</div>
+
+	<section id="autori" typeof="sa:AuthorsList">
+		<h2>Autori</h2>
+		<ul>
+			<li typeof="sa:ContributorRole" property="schema:author">
+				<span typeof="schema:Person">
+					<meta property="schema:givenName" content="Raluca-Florina">
+					<meta property="schema:familyName" content="Bibire">
+					<span property="schema:name">Bibire Raluca-Florina</span>
+				</span>
+				<ul>
+					<li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+						<a href="...@gmail.com" property="schema:email">...@gmail.com</a>
+					</li>
+
+				</ul>
+			</li>
+			<li typeof="sa:ContributorRole" property="schema:author">
+				<span typeof="schema:Person">
+					<meta property="schema:givenName" content="Ana-Maria">
+					<meta property="schema:familyName" content="Ifrose">
+					<span property="schema:name">Ifrose Ana-Maria</span>
+				</span>
+				<ul>
+					<li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+						<a href="anaifrose99@gmail.com" property="schema:email">anaifrose99@gmail.com</a>
+					</li>
+
+				</ul>
+			</li>
+
+		</ul>
+	</section>
+
+	<section id="introducere">
+
+		<h3>
+			Introducere
+		</h3>
+
+		<section typeof="sa:ProjectLinks">
+			<h4> Link-uri:</h4>
+			<ul>
+
+				<li typeof="schema:WebPage" role="link"
+					resource="https://github.com/TrueSide1005/Proiect_TW_Bibire_Ifrose_A3/" property="schema:citation"
+					id="github">
+					<cite property="schema:name">
+						<a href="https://github.com/TrueSide1005/Proiect_TW_Bibire_Ifrose_A3/">Github</a>
+					</cite>
+				</li>
+				<li typeof="schema:WebPage" role="link" resource="https://app.swaggerhub.com/"
+					property="schema:citation" id="swagger">
+					<cite property="schema:name">
+						<a href="https://app.swaggerhub.com/">Swagger</a>
+					</cite>
+				</li>
+			</ul>
+			<p>
+				Cerință:<br><br>
+
+				&emsp;&emsp;Recurgând la un API REST/GraphQL propriu, să se realizeze un instrument Web de vizualizare
+				și de comparare multi-criteriala (pe județe, nivel de educație, grupe de vârstă, mediu, perioadă de timp
+				etc.) a datelor publice referitoare la șomajul din România pe ultimele 12 luni.
+
+				Statisticile, plus vizualizările generate – minim 3 maniere, plus cele cartografice pe baza unor
+				servicii Web specializate – vor putea fi exportate în formatele CSV, XML, SVG si PDF.
+			</p>
+		</section>
+
+
+	</section>
+
+	<section id="database">
+		<h3> Database</h3>
+		<p> Baza de date a fost în MySql pus la dispoziție de intrumentul phpMyAdmin.
+			În vedere respectării aspectului privind securitate în prelucrarea sau introducerea datelor au fost folosite
+			statement-uri prepared de fiecare data cand
+			a fost interogata baza de date.
+		</p>
+		<section id="usersdb">
+			<h3>
+				Tabelul Registru
+			</h3>
+			<p>Tabelul unde vor fi stocate toate detaliile legate de un utilizator. Datele introduce in acest tabel sunt
+				furnizate de form-ul din pagina de sign-up si corespund
+				credentialelor contului nou creat.</p>
+			<p>Structura tabelui : </p>
+			<figure typeof="sa:image">
+				<img src="images/user.png">
+				<figcaption>Fig.1 - Structura tabelului registru</figcaption>
+			</figure>
+			<br>
+			<p>Un exemplu de date stocate in tabelul registru:</p>
+			<br>
+			<figure typeof="sa:image">
+				<img src="images/user-content.png">
+				<figcaption>Fig.2 - Exemplu de date din tabelulul registru</figcaption>
+			</figure>
+		</section>
+
+		<section id="datadb">
+			<h3>
+				Tabelul Data
+			</h3>
+			<p>........</p>
+
+			<p>....:</p>
+			<figure typeof="sa:image">
+				<img src="images/.......png">
+				<figcaption>Fig.3 - Structura tabelului data</figcaption>
+			</figure>
+
+
+			<p>Asa arata un exemplu de date stocate in tabel:</p>
+			<figure typeof="sa:image">
+				<img src="images/.......png">
+				<figcaption>Fig.4 - Exemplu de date din tabelulul data</figcaption>
+			</figure>
+
+		</section>
+
+		<section id="ratadb">
+			<h3>
+				Tabelul RataLunaAnul
+			</h3>
+
+			<p>Date din acest tabel sunt introduse de administratorul bazei de date .</p>
+			<p>Tabelul este realizat pentru fiecare luna a anului si contine ca si date raportate per judet: numarul
+				total someri, numarul total someri femei,
+				numarul total de someri bărbați, număr someri indemnizati, număr someri neindemnizati, rata somajului
+				(%) ,
+				rata somajului feminina (%) , rata somajului masculina (%).
+			</p>
+
+			<p>Structura tabelului:</p>
+			<figure typeof="sa:image">
+				<img src="images/rata.png">
+				<figcaption>Fig.5 - Structura tabelului RataLunaAnul</figcaption>
+			</figure>
+
+
+			<p>Exemplu de date stocate in tabelul RataLunaAnul:</p>
+			<figure typeof="sa:image">
+				<img src="images/rata-content.png">
+				<figcaption>Fig.6 - Exemplu de date din tabelulul RataLunaAnul</figcaption>
+			</figure>
+
+		</section>
+
+		<section id="mediidb">
+			<h3>
+				Tabelul MediiLunaAnul
+			</h3>
+
+			<p>Date din acest tabel sunt introduse de administratorul bazei de date .</p>
+			<p>Tabelul este realizat pentru fiecare luna a anului si contine ca si date raportate per judet: numar total
+				someri din mediul
+				urban, numar someri femei din mediul urban, numar someri barbati din mediul urban, numar total someri
+				din mediul rural,
+				numar someri femei din mediul rural, numar someri barbati din mediul rural.
+
+			</p>
+			<p>Asa arata structura tabelului rata:</p>
+			<figure typeof="sa:image">
+				<img src="images/medii.png">
+				<figcaption>Fig.7 - Structura tabelului MediiLunaAnul</figcaption>
+			</figure>
+
+
+			<p>Exemplu de date stocate in tabel:</p>
+			<figure typeof="sa:image">
+				<img src="images/medii-content.png">
+				<figcaption>Fig.8 - Exemplu de date din tabelulul MediiLunaAnul</figcaption>
+			</figure>
+
+		</section>
+
+		<section id="educatiedb">
+			<h3>
+				Tabelul EducatieLunaAnul
+			</h3>
+
+			<p>Date din acest tabel sunt introduse de administratorul bazei de date .</p>
+			<p>Tabelul este realizat pentru fiecare luna a anului si contine ca si date raportate per judet: fara
+				studii,
+				invatamant primar, invatamant gimnazial, invatamant liceal, invatamant posticeal, invatamant
+				profesional/arte si meserii,
+				invatamant universitar.
+			</p>
+			<p>Structura tabelului:</p>
+			<figure typeof="sa:image">
+				<img src="images/educatie.png">
+				<figcaption>Fig.9 - Structura tabelului EducatieLunaAnul</figcaption>
+			</figure>
+
+
+			<p>Exemplu de date stocate in tabel:</p>
+			<figure typeof="sa:image">
+				<img src="images/educatie-content.png">
+				<figcaption>Fig.10 - Exemplu de date din tabelulul EducatieLunaAnul</figcaption>
+			</figure>
+
+		</section>
+
+		<section id="educatiedb">
+			<h3>
+				Tabelul VarsteLunaAnul
+			</h3>
+
+			<p>Date din acest tabel sunt introduse de administratorul bazei de date .</p>
+			<p>Tabelul este realizat pentru fiecare luna a anului si contine ca si date raportate per judet: fara
+				studii,
+				Sub 25 ani, intre 25 - 29 ani, intre 30 - 39 ani, intre 40 - 49 ani, intre 50 - 55 ani peste 55 ani.
+			</p>
+			<p>Structura tabelului:</p>
+			<figure typeof="sa:image">
+				<img src="images/varste.png">
+				<figcaption>Fig.11 - Structura tabelului VarsteLunaAnul</figcaption>
+			</figure>
+
+
+			<p>Exemplu de date stocate in tabel:</p>
+			<figure typeof="sa:image">
+				<img src="images/varste-content.png">
+				<figcaption>Fig.12- Exemplu de date din tabelulul VarsteLunaAnul</figcaption>
+			</figure>
+
+		</section>
+	</section>
+
+	<section id="front-end">
+
+		<h3>
+			Front End
+		</h3>
+
+		<p>Toate paginile site-ului sunt responsive, redimensionarea in pagina are loc automat in functie de dimensiunile ecranului
+			dispozitivul utilizat, inclusiv pe device-uri ca iPhone 5 SE ce
+			are un ecran ingust.
+		</p>
+
+		<section id="signupfront">
+			<h3>
+				Sign-Up
+			</h3>
+
+			<p>Pagina de Sign Up are denumirea de signup.php.</p>
+		
+		</section>
+
+
+		<section id="loginfront">
+			<h3>
+				Login
+			</h3>
+
+			<p>Pagina de Login are denumirea de login.php.</p>
+		
+		</section>
+
+		<section id="logoutfront">
+			<h3>
+				Logout
+			</h3>
+		
+		</section>
+
+		<section id="hartafront">
+			<h3>
+				Resurse Cartografice
+			</h3>		
+			
+			<p>Pagina Resurse Cartografice are denumirea de resurseCartografice.php.</p>
+
+		</section>
+
+		<section id="statisticifront">
+			<h3>
+				Statistici
+			</h3>		
+		
+		</section>
+		
+		<section id="referintefront">
+			<h3>
+				Referinte
+			</h3>		
+		
+		</section>
+		
+	</section>
+
+	<section id="back-end">
+
+		<h3>
+			Back End
+		</h3>
+
+		<section id="signuploginlogoutback">
+			<h3>
+				Sign-Up & Login & Logout
+			</h3>
+		</section>
+
+
+		<section id="hartaback-end">
+			<h3>
+				Resurse Cartografice
+			</h3>
+		</section>
+
+		<section id="statisticiback-end">
+			<h3>
+				Resurse Cartografice
+			</h3>
+		</section>
+	</section>
+
+</body>
+
+</html>
