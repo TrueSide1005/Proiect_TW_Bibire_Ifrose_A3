@@ -1,64 +1,56 @@
 <?php
-
+//rutele posibile si handle-ul fiecaruia
 $mapRoutes = [
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
         "route" => "map/:month/total",
         "handler" => "getMapRoutes"
     ],
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
         "route" => "map/:month/total/:id",
         "handler" => "getMapRoutesTotalId"
     ],
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
         "route" => "map/:month/femei/:id",
         "handler" => "getMapRoutesFemeiId"
     ],
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
         "route" => "map/:month/barbati/:id",
         "handler" => "getMapRoutesBarbatiId"
     ],
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
         "route" => "map/:month/femei",
         "handler" => "getMapRoutesFemei"
     ],
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
         "route" => "map/:month/barbati",
         "handler" => "getMapRoutesBarbati"
     ],
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
         "route" => "map/:month",
         "handler" => "getMapRoutesAll"
     ],
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
         "route" => "map/id/:id",
         "handler" => "getMapRoutesComplete"
     ],
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
         "route" => "map/:month/:id",
         "handler" => "getMapRoutesId"
     ],
 ];
-
+//conexiunea cu baza de date
 global $conn;
 
+//handle-uri
 function getMapRoutes($req)
 {
     //echo "getMapRoutes";

@@ -1,25 +1,24 @@
 
   <?php
+  //stabilirea conexiunii cu baza de date
+  require __DIR__ . '/../config.php';
   $q = strval($_GET['q']);
-  $con = mysqli_connect('localhost', 'root', '', 'tw');
-  if (!$con) {
-    die('Could not connect: ' . mysqli_error($con));
-  }
+  global $conn;
 
-  mysqli_select_db($con, "tw");
+  //preluarea informatiilor din baza de date si crearea unui string cu aceste date
   $statement = "SELECT " . "$q" . " FROM data ORDER BY id DESC;";
   $sql = "$statement";
-  $result = mysqli_query($con, $sql);
+  $result = mysqli_query($conn, $sql);
   $array = "";
   $ok = 0;
   while ($row = mysqli_fetch_array($result)) {
     if ($ok == 0) {
-      $array= "$row[$q]";
+      $array = "$row[$q]";
       $ok++;
     } else {
       $array = "$row[$q]" . ", " . $array;
     }
   }
   echo $array;
-  mysqli_close($con);
+  mysqli_close($conn);
   ?>

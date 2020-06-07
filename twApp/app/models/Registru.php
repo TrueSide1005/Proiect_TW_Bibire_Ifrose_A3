@@ -39,6 +39,8 @@ class Registru
             $stmt1->bind_result($id1);
             $stmt1->fetch();
             $stmt1->close();
+            
+            //verify the unicity of name and email adress
             if (is_numeric($id)) {
                 $err_msg = "Name already in use";
                 require __DIR__ . '/../db_error.php';
@@ -46,7 +48,7 @@ class Registru
                 $err_msg = "Email already in use";
                 require __DIR__ . '/../db_error.php';
             } else {
-                # Create your query using : to add parameters to the statement
+                # Create query using : to add parameters to the statement
                 $query = 'INSERT INTO registru (nume, adresa_email, parola, judet, create_at, update_at) VALUES
                (?, ? , ?, ?, ?, ?)';
 

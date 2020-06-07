@@ -62,6 +62,7 @@
                                     $_SESSION['user_id'] = $id;
                                     $s = session_status();
                                     if ($s == 2) {
+                                        //daca parola e corecta se seteaza $_SESSION si se afiseaza mesaj de logare
                                         if (is_numeric($_SESSION['user_id'])) {
                                             echo "<div id=\"good\">
                                             <span id=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span> 
@@ -69,13 +70,13 @@
                                             </div>";
                                         }
                                     }
-                                } else {
+                                } else { //daca parola e incorecta se afiseaza un mesaj de eroare la logare
                                     echo "<div id=\"alert\">
                                     <span id=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span> 
                                     <strong>Log in esuat!</strong> Username sau parola incorecte!
                                     </div>";
                                 }
-                            } else {
+                            } else { //daca nu au fost introduse toate datele se afiseaza un mesaj de eroare
                                 echo "<div id=\"alert\">
                                 <span id=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span> 
                                 <strong>Log in esuat!</strong> Username sau parola incorecte!
