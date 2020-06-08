@@ -16,7 +16,7 @@
 
 <body>
     <?php require_once  __DIR__ . '/../../components/header.php' ?>
-    <div class="container">
+    <div class="antet">
         <h3 id="titlu">Resurse cartografice</h3>
         <hr class="linie_titlu"> <br>
     </div>

@@ -2,83 +2,47 @@
   <div class="barmenu">
     <nav>
       <a href="/twApp">
-        <img class="logo" src="/twApp/public/images/s.png" alt="Sigla" style="height:3em" >
+        <img class="logo" src="/twApp/public/images/s.png" alt="Sigla" style="height:3em">
       </a>
+
       <div class="menu-icons">
 
-        <img class="open" src="/twApp/public/images/icons8-menu-50.png" alt="menu ">
+        <img class="open" src="/twApp/public/images/icons8-menu-24.png" alt="menu ">
 
 
-        <img class="close" src="/twApp/public/images/icons8-cancel-50.png" alt="cancel">
+        <img class="close" src="/twApp/public/images/icons8-cancel-26.png" alt="cancel">
 
       </div>
+
       <ul class="listaPrincipala">
 
-        <li><a href="home">Organizare</a></li>
-        <li class="display"><span></span>Judete
+        <li><a href="/twApp">Organizare</a></li>
+        <li><a href='/twApp/statistici/StatisticiCartografice'>Resurse Cartografice</a></li>
+        <li class="display"><span></span>Statistici <i class="fa fa-caret-down"></i>
           <ul id="submenu" class="sublist">
-            <li><a href=#>Alba</a></li>
-            <li><a href=#>Arad</a></li>
-            <li><a href=#>Argeș</a></li>
-            <li><a href=#>Bacău</a> </li>
-            <li><a href=#>Bihor</a> </li>
-            <li><a href=#>Bistrița-Năsăud</a></li>
-            <li><a href=#>Botoșani</a> </li>
-            <li><a href=#>Brașov</a></li>
-            <li><a href=#>Brăila</a></li>
-            <li><a href=#>București</a></li>
-            <li><a href=#>Buzău</a></li>
-            <li><a href=#>Caraș-Severin</a></li>
-            <li><a href=#>Călărași</a></li>
-            <li><a href=#>Cluj</a></li>
-            <li><a href=#>Constanța</a></li>
-            <li><a href=#>Covasna</a></li>
-            <li><a href=#>Dâmbovița</a></li>
-            <li><a href=#>Dolj</a></li>
-            <li><a href=#>Galați</a></li>
-            <li><a href=#>Giurgiu</a></li>
-            <li><a href=#>Gorj</a></li>
-            <li><a href=#>Harghita</a></li>
-            <li><a href=#>Hunedoara</a></li>
-            <li><a href=#>Ialomița</a></li>
-            <li><a href=#>Iași</a></li>
-            <li><a href=#>Ilfov</a></li>
-            <li><a href=#>Maramureș</a></li>
-            <li><a href=#>Mehedinți</a></li>
-            <li><a href=#>Mureș</a></li>
-            <li><a href=#>Neamt</a></li>
-            <li><a href=#>Olt</a></li>
-            <li><a href=#>Prahova</a></li>
-            <li><a href=#>Satu Mare</a></li>
-            <li><a href=#>Sălaj</a></li>
-            <li><a href=#>Sibiu</a></li>
-            <li><a href=#>Suceava</a></li>
-            <li><a href=#>Teleorman</a></li>
-            <li><a href=#>Timiș</a></li>
-            <li><a href=#>Tulcea</a></li>
-            <li><a href=#>Vaslui</a></li>
-            <li><a href=#>Vâlcea</a></li>
-            <li><a href=#>Vrancea</a></li>
-          </ul>
-        </li>
-        <li><span></span>Statistici
-          <ul class="sublist">
-            <li><a href='/twApp/statistici/StatisticiCartografice'>Statistici Cartografice</a></li>
+
             <li><a href='/twApp/statistici/Martie2020'>Martie 2020</a></li>
             <li><a href='/twApp/statistici/Februarie2020'>Februaie 2020</a></li>
             <li><a href='/twApp/statistici/Ianuarie2020'>Ianuarie 2020</a></li>
             <li><a href='/twApp/statistici/Decembrie2019'>Decembrie 2019</a></li>
             <li><a href='/twApp/statistici/Noiembrie2019'>Noiembrie 2019</a></li>
-            <li><a href='/twApp/statistici/Octombrie2019'>Decembrie 2019</a></li>
+            <li><a href='/twApp/statistici/Octombrie2019'>Octombrie 2019</a></li>
+            <li><a href='/twApp/statistici/Septembrie2019'>Septembrie 2019</a></li>
+            <li><a href='/twApp/statistici/August2019'>August 2019</a></li>
+            <li><a href='/twApp/statistici/Iulie2019'>Iulie 2019</a></li>
+            <li><a href='/twApp/statistici/Iunie 2019'>Iunie 2019</a></li>
+            <li><a href='/twApp/statistici/Mai2019'>Mai 2019</a></li>
+            <li><a href='/twApp/statistici/Aprile2019'>Aprile 2019</a></li>
+            <li><a href='/twApp/statistici/Aprile2019'>Martie 2019</a></li>
           </ul>
         </li>
 
-        <li><a href=#>Referinte</a></li>
+        <li><a href=/twApp/referinte/index-referinte>Referinte</a></li>
       </ul>
 
       <div class="sign">
         <button onclick="window.location.href='/twApp/auth/register'" class="log">
-          Sign up
+          Sign in
         </button>
 
         <button onclick="window.location.href='/twApp/auth/login'" class="log">

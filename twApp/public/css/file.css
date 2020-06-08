@@ -1,24 +1,20 @@
-.container {
-  margin: 0 3em;
+.antet {
   padding: 1em;
-  margin-left: 8em;
-  margin-top: 1.7em;
-
+  margin-left: 10%;
+  margin-top:2em;
 }
 
 hr {
-  width: 100%;
+  width: 90%;
   height: 4px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0; 
   background-color: #013605;
-  border: 0 none;
   vertical-align: 20%;
 } 
 
 #titlu{
     font-size: 25px;
-    margin-top: 1em;
+    margin-top: 1.5em;
 }
 
 .doc-icon{
@@ -26,61 +22,59 @@ hr {
   left: 12em;
 }
 
-
-.download{
-  margin-left: 10em;
+.bar{ 
+  margin-left: 11%;
+  position: relative;
   width: 75%;
   padding: 15px;
-  height: 1.5em;
-  text-align: center;
+  height: 100%;
   background-color: #F2F4DF;;
 }
 
-.download:hover{
+.bar:hover{
   height: 2em;
+  position: relative;
   width: 75%;
-  margin-left: 10em;
-  text-align: center;
+  height: 100%;
   border-radius: 1%;
   background-color: rgb(224, 224, 224);
   box-shadow: 0 9px 14px 0 rgba(0,0,0,0.24), 0 15px 20px 0 rgba(0,0,0,0.19);
 }
 
+.paragraph{ font-size: medium;   display: inline;}
 
 
-.doc {left: 15em;  position: absolute; margin: auto;}
-
-
-.dropdown {
-position: absolute;
+.download
+{
+margin-left: 30%;
+position: relative;
 }
 
-.dropbtn {
+.button
+{
+margin-left: 1em;
 background-color: #B3B6C4;
 color: white;
-padding:  5px 10px;
+padding:  5px 15px;
 border: none;
 border-radius: 10px;
-font-size: medium;
 position: sticky;
-width: 10em;
-left: 37em;
-position: absolute;
+font-size: medium;
 }
 
-.dropdown-content {
+.download-content {
 display: none;
 position: absolute;
 background-color: #B3B6C4;
-width: 10em;
+width: 11em;
 top: 1.7em;
-left: 37em;
+z-index: 9999;
 border:2px solid  rgb(20, 21, 27);
 }
 
-.dropdown:hover .dropdown-content {display: block;}
+.download:hover .download-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #34495E;}
+.download:hover .dropbtn {background-color: #34495E;}
 
 input[type=submit] {
   width: 100%;
@@ -94,53 +88,42 @@ input[type=submit]:hover, .grafic:hover {
 background-color: #34495E;
 }
 
-.grafic{
-position: absolute;
-font-size: medium;
-background-color: #B3B6C4;
-padding:  5px 10px;  
-border-radius: 10px;
-left: 67em;
-}
 
-.grafic a{
-text-decoration: none;
-color: white;
-
-}
 .diagram-container{
-width: 75%;
+width: 70%;
 height: 35em;
 border: 2px solid #013605;
-margin-left: 10em;
+margin-left: auto;
+margin-right: auto;
 margin-top: 2.5em;
 margin-bottom: 2em;
 padding: 0.8em;
 background-color: white;
-overflow-x: hidden;
+overflow-x: auto;
 overflow-y: hidden;
 }
 .diagram{
-width: 69em;
-height: 60em;
+width: 72em;
+height: 35em;
 }
 
 
-
-@media screen and (max-width: 930px){
+@media screen and (max-width: 900px){
 
 .diagram-container{
-  width: 75%;
-  height: 25em;
   border: 2px solid #013605;
-  margin-left: 10em;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 2.5em;
   margin-bottom: 2em;
   padding: 0.8em;
   background-color: white;
-  overflow-x: scroll;
   overflow-y: auto;
+} 
+
+.download
+{
+  position: relative;
+  margin-left: 15%;
 }
-
-
 }
