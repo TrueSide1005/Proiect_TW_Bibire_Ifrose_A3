@@ -124,12 +124,23 @@
 					<span> 5. </span>
 					Back End
 				</a>
-
 				<ol role="directory">
 					<li>
-						<a href="#signuploginlogoutback">
+						<a href="#signupback">
 							<span> 5.1. </span>
-							Sign-Up & Login & Logut
+							Sign-Up Back
+						</a>
+					</li>
+					<li>
+						<a href="#loginback">
+							<span> 5.1. </span>
+							Login Back
+						</a>
+					</li>
+					<li>
+						<a href="#logoutback">
+							<span> 5.1. </span>
+							Logout Back
 						</a>
 					</li>
 					<li>
@@ -407,7 +418,7 @@
 
 			<p>Pagina de Sign Up:</p>
 			<figure typeof="sa:image">
-				<img src="images/qwerty.png">
+				<img src="images/signup.png">
 				<figcaption>Fig.13- Pagina de Sign Up</figcaption>
 			</figure>
 
@@ -422,7 +433,7 @@
 			<p>Pagina de Login are denumirea de index.php din folderul app/views/login.</p>
 			<p>Pagina de Login:</p>
 			<figure typeof="sa:image">
-				<img src="images/qwerty.png">
+				<img src="images/login.png">
 				<figcaption>Fig.14- Pagina de Login</figcaption>
 			</figure>
 
@@ -435,7 +446,7 @@
 			<p> Logout-ul se face apasand butonul de logout de pe pagina principala: app/views/home/index.php</p>
 			<p>Pagina principala cu butonul de logout:</p>
 			<figure typeof="sa:image">
-				<img src="images/qwerty.png">
+				<img src="images/logout.png">
 				<figcaption>Fig.15- Pagina principala cu butonul de logout</figcaption>
 			</figure>
 
@@ -446,10 +457,10 @@
 				Resurse Cartografice
 			</h3>
 
-			<p>Pagina Resurse Cartografice are denumirea de resurseCartografice.php.</p>
+			<p>Pagina Resurse Cartografice are denumirea resurseCartografice.php si se afla in app/views/statistici.</p>
 			<p>Pagina Resurse Cartografice:</p>
 			<figure typeof="sa:image">
-				<img src="images/qwerty.png">
+				<img src="images/harti.png">
 				<figcaption>Fig.16- Pagina Resurse Cartografice</figcaption>
 			</figure>
 
@@ -466,7 +477,12 @@
 			<h3>
 				Referinte
 			</h3>
-
+			<p>Pagina Referinte are denumirea index-referinte.php si se gaseste in app/views/referinte.</p>
+			<p>Pagina Referinte:</p>
+			<figure typeof="sa:image">
+				<img src="images/referinte.png">
+				<figcaption>Fig.17- Pagina Referinte</figcaption>
+			</figure>
 		</section>
 
 	</section>
@@ -482,17 +498,35 @@
 				Sign-Up
 			</h3>
 			<p>Sign-Up-ul se face prin introducerea datelor corespunzatoare noului cont in formularul de pe pagina
-				app/views/register/index.php .
+				app/views/register/index.php.
 				Acestea sunt apoi trimise catre app/models/registru.php unde sunt verificate urmatoarele criterii:
 				completarea tuturor spatiilor
 				din cadrul form-ului, respectarea formatului standard al fiecarui tip de data, unicitatea numelui si
 				adresei de email introduse.
+			</p>
+			<figure typeof="sa:image">
+				<img src="images/preluare.png">
+				<figcaption>Fig.18- Preluarea datelor fin form</figcaption>
+			</figure>
+			<figure typeof="sa:image">
+				<img src="images/verificare.png">
+				<figcaption>Fig.19- Verificarea datelor</figcaption>
+			</figure>
+			<p>
 				Daca testele de mai sus sunt trecute, se va insera in tabela "registru" un nou rand continand
 				credentialele contului nou. De asemenea,
 				parola va fi salvata cu valoarea unei functii hash, oferindu-se astfel mai multa securitate pentru
 				utilizatori.
 				Altfel, va aparea o fereastra de tip alert cu un mesaj sugestiv, cazuri gestionate in api/db_error.php.
 			</p>
+			<figure typeof="sa:image">
+				<img src="images/inserare.png">
+				<figcaption>Fig.20- Inserarea datelor in baza de date</figcaption>
+			</figure>
+			<figure typeof="sa:image">
+				<img src="images/error.png">
+				<figcaption>Fig.21- Fisierul db_error.php</figcaption>
+			</figure>
 		</section>
 
 		<section id="loginback">
@@ -509,6 +543,10 @@
 				<br>De asemenea, daca utilizatorul este deja logat, va aparea un mesaj corespunzator, iar acesta
 				nu se va mai putea loga din nou,
 			</p>
+			<figure typeof="sa:image">
+				<img src="images/log.png">
+				<figcaption>Fig.22- Login backend</figcaption>
+			</figure>
 		</section>
 
 		<section id="logoutback">
@@ -521,6 +559,10 @@
 				corespunzator.
 				Daca nu a fost efectuata o logare in prealabil, clientul va fi informat printr-un mesaj.
 			</p>
+			<figure typeof="sa:image">
+				<img src="images/out.png">
+				<figcaption>Fig.23- Logout backend</figcaption>
+			</figure>
 		</section>
 
 
@@ -529,15 +571,47 @@
 				Resurse Cartografice
 			</h3>
 			<p>
-				Pe aceasta pagina de va afisa o interpretare a datelor din tabla "data" sub forma unei harti choropleth.
-				Aceasta este generata folosind <i>"Leaflet"</i>, iar datele afisate pe harta corespund coloanei alese prin form-ul de pe pagina, folosind Ajax (public/js/map/map.js).
-				In functie de valoarea selectata de utilizator in cadrul form-ului, vor fi preluate anumite date din baza de date 
-				(in cadrul app/models/getdata.php) si se va apela functia buildMap (public/js/map/leaf.js), care va genera harta, cu datele selectate.
-				<br>Harta va putea fi salvata sub forma de PNG si SVG, folosind biblioteca javascript <i>"html2canvas"</i>, functiile
-				pentru fiecare conversie fiind gasite in public/js/map/capture.js, respectiv public/js/map/svg.js. De asemenea, datele vor putea
-				fi exportate sub forma unui fisier csv, printr-o functie Ajax gasita in public/js/map/csv.js, selectarea si redactarea corespunzatoare
+				Pe aceasta pagina de va afisa o interpretare a datelor din tabela "data" sub forma unei harti
+				choropleth.
+				Aceasta este generata folosind <i>"Leaflet"</i>, iar datele afisate pe harta corespund coloanei alese
+				prin form-ul de pe pagina, folosind Ajax (public/js/map/map.js).
+				In functie de valoarea selectata de utilizator in cadrul form-ului, vor fi preluate anumite date din
+				baza de date
+				(in cadrul app/models/getdata.php) si se va apela functia buildMap (public/js/map/leaf.js), care va
+				genera harta, cu datele selectate.
+			</p>
+			<figure typeof="sa:image">
+				<img src="images/map.png">
+				<figcaption>Fig.24- Fisierul map.js</figcaption>
+			</figure>
+			<p>Harta va putea fi salvata sub forma de PNG si SVG, folosind biblioteca javascript
+				<i>"html2canvas"</i>, functiile
+				pentru fiecare conversie fiind gasite in public/js/map/capture.js, respectiv public/js/map/svg.js.
+			</p>
+			<figure typeof="sa:image">
+				<img src="images/png.png">
+				<figcaption>Fig.25- Cod pentru salvarea hartii ca PNG din fisierul capture.js</figcaption>
+			</figure>
+			<figure typeof="sa:image">
+				<img src="images/svg.png">
+				<figcaption>Fig.26- Cod pentru salvarea hartii ca SVG din fisierul svg.js</figcaption>
+			</figure>
+			<p>
+				De asemenea, datele vor putea
+				fi exportate sub forma unui fisier csv, printr-o functie Ajax gasita in public/js/map/csv.js, selectarea
+				si redactarea corespunzatoare
 				a acestora se face in app/models/csvExport.php, cod apelat in urma functiei Ajax descrisa precedent.
-				<br>Pentru eficienta maxima a site-ului, toate fisierele javascript mentionate mai sus, au fost compresate in fisierul mini.js din folderul
+			</p>
+			<figure typeof="sa:image">
+				<img src="images/csv.png">
+				<figcaption>Fig.27- Cod pentru salvarea hartii ca CSV din fisierul csv.js</figcaption>
+			</figure>
+			<figure typeof="sa:image">
+				<img src="images/csvExport.png">
+				<figcaption>Fig.28- Fisierul csvExport.php</figcaption>
+			</figure>
+			<p>Pentru eficienta maxima a site-ului, toate fisierele javascript mentionate mai sus, au fost
+				compresate in fisierul mini.js din folderul
 				public/js/map folosind tool-ul <i>"terser"</i>.
 			</p>
 		</section>

@@ -15,9 +15,7 @@ class Registru
         if ($nume == null || $email == null || $parola == null || $judet == null) {
             $err_msg = "All Values Not Entered";
             require __DIR__ . '/../db_error.php';
-
             # Validate Data with Regular Expressions
-
         } elseif (!preg_match("/[a-zA-Z]{0,9}$/", $nume)) {
             $err_msg = "Name Not Valid";
             require __DIR__ . '/../db_error.php';
@@ -38,8 +36,7 @@ class Registru
             $stmt1->execute();
             $stmt1->bind_result($id1);
             $stmt1->fetch();
-            $stmt1->close();
-            
+            $stmt1->close();            
             //verify the unicity of name and email adress
             if (is_numeric($id)) {
                 $err_msg = "Name already in use";
@@ -58,7 +55,7 @@ class Registru
                 $stm->bind_param("ssssss", $nume, $email, $parola, $judet, $create_at, $update_at);
                 $stm->execute();
                 $stm->close();
-                header('Location: http://localhost/twApp/');
+                header('Location: /twApp/');
             }
         }
     }

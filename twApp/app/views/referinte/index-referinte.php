@@ -7,7 +7,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/twApp/public/images/flag.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" />
-    <link rel="stylesheet" type="text/css" href="/twApp/public/css/referinte.css" />
+    <link rel="stylesheet" type="text/css" href="/twApp/public/css/refrinte.css" />
 </head>
 
 <body>
@@ -19,7 +19,9 @@
                 <div class="form"> <h2>Referinte:</h2>
                     <a href="https://data.gov.ro/dataset?q=somaj&sort=metadata_modified+desc"><p>Data.Gov.Ro</p></a>
                     <a href="https://www.chartjs.org/"><p>Chartjs.org</p></a>
-                    <a href="   http://leafletjs.com/"><p>Leafletjs</p></a>                 
+                    <a href="http://leafletjs.com/"><p>Leafletjs</p></a>
+                    <a href="https://github.com/niklasvh/html2canvas"><p>Html2canvas</p></a>
+                    <a href="https://github.com/terser/terser"><p>Terser</p></a>       
                 </div>
                  
             </b>           
