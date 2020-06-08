@@ -144,7 +144,7 @@
 							Statisti
 						</a>
 					</li>
-					
+
 				</ol>
 			</li>
 		</ol>
@@ -161,7 +161,7 @@
 				</span>
 				<ul>
 					<li property="schema:roleContactPoint" typeof="schema:ContactPoint">
-						<a href="...@gmail.com" property="schema:email">...@gmail.com</a>
+						<a href="ralu_florina@yahoo.com" property="schema:email">ralu_florina@yahoo.com</a>
 					</li>
 
 				</ul>
@@ -225,8 +225,9 @@
 	<section id="database">
 		<h3> Database</h3>
 		<p> Baza de date a fost în MySql pus la dispoziție de intrumentul phpMyAdmin.
-			În vedere respectării aspectului privind securitate în prelucrarea sau introducerea datelor au fost folosite
-			statement-uri prepared de fiecare data cand
+			În vedere respectării aspectului privind securitatea în prelucrarea sau introducerea datelor au fost
+			folosite
+			prepared statement-uri de fiecare data cand
 			a fost interogata baza de date.
 		</p>
 		<section id="usersdb">
@@ -254,18 +255,24 @@
 			<h3>
 				Tabelul Data
 			</h3>
-			<p>........</p>
+			<p>Stocheaza date privind rata somajului (%) in Romania pe ultimele 12 luni si dupa 3 criterii: total, femei
+				si barbati.
+				Aceste date vor fi folosite apoi pentru generarea hartii de pe pagina "statisticiCartografice.php".
+				Datele sunt introduse de administratorul bazei de date si puse la dispozitia clientului prin cadrul
+				form-ului de pe pagina
+				mentionata mai sus.
+			</p>
 
-			<p>....:</p>
+			<p>Structura tabelului:</p>
 			<figure typeof="sa:image">
-				<img src="images/.......png">
+				<img src="images/data_str.png">
 				<figcaption>Fig.3 - Structura tabelului data</figcaption>
 			</figure>
 
 
 			<p>Asa arata un exemplu de date stocate in tabel:</p>
 			<figure typeof="sa:image">
-				<img src="images/.......png">
+				<img src="images/data.png">
 				<figcaption>Fig.4 - Exemplu de date din tabelulul data</figcaption>
 			</figure>
 
@@ -386,9 +393,9 @@
 			Front End
 		</h3>
 
-		<p>Toate paginile site-ului sunt responsive, redimensionarea in pagina are loc automat in functie de dimensiunile ecranului
-			dispozitivul utilizat, inclusiv pe device-uri ca iPhone 5 SE ce
-			are un ecran ingust.
+		<p>Toate paginile site-ului sunt responsive, redimensionarea in pagina are loc automat in functie de
+			dimensiunile ecranului
+			dispozitivul utilizat, inclusiv pe device-uri ca iPhone 5 SE, cu ecran ingust.
 		</p>
 
 		<section id="signupfront">
@@ -396,8 +403,14 @@
 				Sign-Up
 			</h3>
 
-			<p>Pagina de Sign Up are denumirea de signup.php.</p>
-		
+			<p>Pagina de Sign Up are denumirea de index.php din folderul app/views/register.</p>
+
+			<p>Pagina de Sign Up:</p>
+			<figure typeof="sa:image">
+				<img src="images/qwerty.png">
+				<figcaption>Fig.13- Pagina de Sign Up</figcaption>
+			</figure>
+
 		</section>
 
 
@@ -406,40 +419,56 @@
 				Login
 			</h3>
 
-			<p>Pagina de Login are denumirea de login.php.</p>
-		
+			<p>Pagina de Login are denumirea de index.php din folderul app/views/login.</p>
+			<p>Pagina de Login:</p>
+			<figure typeof="sa:image">
+				<img src="images/qwerty.png">
+				<figcaption>Fig.14- Pagina de Login</figcaption>
+			</figure>
+
 		</section>
 
 		<section id="logoutfront">
 			<h3>
 				Logout
 			</h3>
-		
+			<p> Logout-ul se face apasand butonul de logout de pe pagina principala: app/views/home/index.php</p>
+			<p>Pagina principala cu butonul de logout:</p>
+			<figure typeof="sa:image">
+				<img src="images/qwerty.png">
+				<figcaption>Fig.15- Pagina principala cu butonul de logout</figcaption>
+			</figure>
+
 		</section>
 
 		<section id="hartafront">
 			<h3>
 				Resurse Cartografice
-			</h3>		
-			
+			</h3>
+
 			<p>Pagina Resurse Cartografice are denumirea de resurseCartografice.php.</p>
+			<p>Pagina Resurse Cartografice:</p>
+			<figure typeof="sa:image">
+				<img src="images/qwerty.png">
+				<figcaption>Fig.16- Pagina Resurse Cartografice</figcaption>
+			</figure>
 
 		</section>
 
 		<section id="statisticifront">
 			<h3>
 				Statistici
-			</h3>		
-		
+			</h3>
+
 		</section>
-		
+
 		<section id="referintefront">
 			<h3>
 				Referinte
-			</h3>		
-		
+			</h3>
+
 		</section>
-		
+
 	</section>
 
 	<section id="back-end">
@@ -448,10 +477,50 @@
 			Back End
 		</h3>
 
-		<section id="signuploginlogoutback">
+		<section id="signupback">
 			<h3>
-				Sign-Up & Login & Logout
+				Sign-Up
 			</h3>
+			<p>Sign-Up-ul se face prin introducerea datelor corespunzatoare noului cont in formularul de pe pagina
+				app/views/register/index.php .
+				Acestea sunt apoi trimise catre app/models/registru.php unde sunt verificate urmatoarele criterii:
+				completarea tuturor spatiilor
+				din cadrul form-ului, respectarea formatului standard al fiecarui tip de data, unicitatea numelui si
+				adresei de email introduse.
+				Daca testele de mai sus sunt trecute, se va insera in tabela "registru" un nou rand continand
+				credentialele contului nou. De asemenea,
+				parola va fi salvata cu valoarea unei functii hash, oferindu-se astfel mai multa securitate pentru
+				utilizatori.
+				Altfel, va aparea o fereastra de tip alert cu un mesaj sugestiv, cazuri gestionate in api/db_error.php.
+			</p>
+		</section>
+
+		<section id="loginback">
+			<h3>
+				Login
+			</h3>
+			<p>Login-ul se face prin introducerea datelor corespunzatoare unui cont in formularul de pe pagina
+				app/views/login/index.php.
+				Acestea sunt apoi verificate. Daca datele apartin unui cont existent in baza de date, se initiaza o
+				sesiune, setand $_SESSION['id_user']
+				cu id-ul corespunzator acelui cont si se afiseaza un mesaj de bun venit, daca datele introduse nu
+				apartin niciunui cont, se afiseaza un mesaj
+				de eroare.
+				<br>De asemenea, daca utilizatorul este deja logat, va aparea un mesaj corespunzator, iar acesta
+				nu se va mai putea loga din nou,
+			</p>
+		</section>
+
+		<section id="logoutback">
+			<h3>
+				Logout
+			</h3>
+			<p>Logout-ul se face prin apasarea butonului de pe pagina principala, care apeleaza codul din
+				app/models/logout.php. Daca o sesiune cu un id
+				de utilizator a fost initiata, aceasta este eliminata, iar pe pagina principala va aparea un mesaj
+				corespunzator.
+				Daca nu a fost efectuata o logare in prealabil, clientul va fi informat printr-un mesaj.
+			</p>
 		</section>
 
 
@@ -459,11 +528,23 @@
 			<h3>
 				Resurse Cartografice
 			</h3>
+			<p>
+				Pe aceasta pagina de va afisa o interpretare a datelor din tabla "data" sub forma unei harti choropleth.
+				Aceasta este generata folosind <i>"Leaflet"</i>, iar datele afisate pe harta corespund coloanei alese prin form-ul de pe pagina, folosind Ajax (public/js/map/map.js).
+				In functie de valoarea selectata de utilizator in cadrul form-ului, vor fi preluate anumite date din baza de date 
+				(in cadrul app/models/getdata.php) si se va apela functia buildMap (public/js/map/leaf.js), care va genera harta, cu datele selectate.
+				<br>Harta va putea fi salvata sub forma de PNG si SVG, folosind biblioteca javascript <i>"html2canvas"</i>, functiile
+				pentru fiecare conversie fiind gasite in public/js/map/capture.js, respectiv public/js/map/svg.js. De asemenea, datele vor putea
+				fi exportate sub forma unui fisier csv, printr-o functie Ajax gasita in public/js/map/csv.js, selectarea si redactarea corespunzatoare
+				a acestora se face in app/models/csvExport.php, cod apelat in urma functiei Ajax descrisa precedent.
+				<br>Pentru eficienta maxima a site-ului, toate fisierele javascript mentionate mai sus, au fost compresate in fisierul mini.js din folderul
+				public/js/map folosind tool-ul <i>"terser"</i>.
+			</p>
 		</section>
 
 		<section id="statisticiback-end">
 			<h3>
-				Resurse Cartografice
+				Statistici
 			</h3>
 		</section>
 	</section>
