@@ -62,9 +62,9 @@ if (!isset($_SESSION['user_id'])) {
             <button class="button">Descărcare <i class="fa fa-caret-down"></i></button>
 
             <form class="download-content" action="" method="post">
-                <input type="submit" name="ExportRata" value="Descărcare-XML" />
-                <input type="submit" name="ExportRata" value="Descărcare-CSV" />
-                <input type="submit" name="ExportRata" value="Descărcare-PDF" />
+                <input type="submit" name="ExportVarste" value="Descărcare-XML" />
+                <input type="submit" name="ExportVarste" value="Descărcare-CSV" />
+                <input type="submit" name="ExportVarste" value="Descărcare-PDF" />
             </form>
             <button id="btn-download" class="button" onclick="doSVG('line');">Descărcare SVG</button><a id="link"></a>
             <button id="btn-download" class="button" onclick="doCapture('line');">Descărcare PNG</button><a id="link"></a>
@@ -85,9 +85,9 @@ if (!isset($_SESSION['user_id'])) {
             <button class="button">Descărcare <i class="fa fa-caret-down"></i></button>
 
             <form class="download-content" action="" method="post">
-                <input type="submit" name="ExportRata" value="Descărcare-XML" />
-                <input type="submit" name="ExportRata" value="Descărcare-CSV" />
-                <input type="submit" name="ExportRata" value="Descărcare-PDF" />
+                <input type="submit" name="ExportMedii" value="Descărcare-XML" />
+                <input type="submit" name="ExportMedii" value="Descărcare-CSV" />
+                <input type="submit" name="ExportMedii" value="Descărcare-PDF" />
             </form>
             <button id="btn-download" class="button" onclick="doSVG('medii');">Descărcare SVG</button><a id="link"></a>
             <button id="btn-download" class="button" onclick="doCapture('medii');">Descărcare PNG</button><a id="link"></a>
@@ -106,9 +106,9 @@ if (!isset($_SESSION['user_id'])) {
             <button class="button">Descărcare <i class="fa fa-caret-down"></i></button>
 
             <form class="download-content" action="" method="post">
-                <input type="submit" name="ExportRata" value="Descărcare-XML" />
-                <input type="submit" name="ExportRata" value="Descărcare-CSV" />
-                <input type="submit" name="ExportRata" value="Descărcare-PDF" />
+                <input type="submit" name="ExportEducatie" value="Descărcare-XML" />
+                <input type="submit" name="ExportEducatie" value="Descărcare-CSV" />
+                <input type="submit" name="ExportEducatie" value="Descărcare-PDF" />
             </form>
             <button id="btn-download" class="button" onclick="doSVG('educatie');">Descărcare SVG</button><a id="link"></a>
             <button id="btn-download" class="button" onclick="doCapture('educatie');">Descărcare PNG</button><a id="link"></a>

@@ -8,24 +8,27 @@ class PDF
 
         require __DIR__ . '/../config.php';
 
-        require('/public/libs/fpdf182/fpdf.php');
+        require __DIR__ . '/../libs/fpdf182/fpdf.php';
 
+        //new pdf document
         $pdf = new FPDF();
         $pdf->AddPage();
         $pdf->SetFont('Arial', 'B', 10);
         $pdf->Ln();
         $pdf->Ln();
         $pdf->SetFont('times', 'B', 10);
+        
+        //set columns dimenion and name
         if ($criteriu == "numar-rata") {
-            $pdf->Cell(20, 7, "Judet");
-            $pdf->Cell(20, 7, "Nr. total");
-            $pdf->Cell(25, 7, "Nr. Barbati");
-            $pdf->Cell(25, 7, "Nr. Femei");
+            $pdf->Cell(30, 7, "Judet");
+            $pdf->Cell(28, 7, "Nr. total");
+            $pdf->Cell(18, 7, "Femei");
+            $pdf->Cell(18, 7, "Barbati");
             $pdf->Cell(25, 7, "Indemnizati");
             $pdf->Cell(25, 7, "Neindemnizati");
-            $pdf->Cell(10, 7, "Rata");
-            $pdf->Cell(20, 7, "Rata Femei");
-            $pdf->Cell(20, 7, "Rata Barbati");
+            $pdf->Cell(17, 7, "Rata");
+            $pdf->Cell(20, 7, "Rata F.");
+            $pdf->Cell(20, 7, "Rata B.");
         } elseif ($criteriu == "varste") {
             $pdf->Cell(35, 7, "Judet");
             $pdf->Cell(30, 7, "Sub25");
@@ -53,15 +56,16 @@ class PDF
             $pdf->Cell(20, 7, "Universitar");
         }
 
-
         $pdf->Ln();
+        //set break beetween header document and content
         $pdf->Cell(450, 7, "----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         $pdf->Ln();
-
 
         $sql = "SELECT * FROM " . $data . " ";
         $result = mysqli_query($conn, $sql);
 
+        
+        //fill columns with data from database
         while ($rows = mysqli_fetch_array($result)) {
             if ($criteriu == "numar-rata") {
                 $jud = $rows[0];
@@ -75,7 +79,7 @@ class PDF
                 $rata_B = $rows[8];
 
 
-                $pdf->Cell(30, 7, $jud);
+                $pdf->Cell(35, 7, $jud);
                 $pdf->Cell(25, 7, $total);
                 $pdf->Cell(20, 7, $total_F);
                 $pdf->Cell(20, 7, $total_B);

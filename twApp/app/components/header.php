@@ -32,8 +32,8 @@
             <li><a href='/statistici/Iulie2019'>Iulie 2019</a></li>
             <li><a href='/statistici/Iunie 2019'>Iunie 2019</a></li>
             <li><a href='/statistici/Mai2019'>Mai 2019</a></li>
-            <li><a href='/statistici/Aprile2019'>Aprile 2019</a></li>
-            <li><a href='/statistici/Aprile2019'>Martie 2019</a></li>
+            <li><a href='/statistici/Aprilie2019'>Aprile 2019</a></li>
+            <li><a href='/statistici/Martie2019'>Martie 2019</a></li>
           </ul>
         </li>
         <li><a href=/contact/index-contact>Contact</a></li>
