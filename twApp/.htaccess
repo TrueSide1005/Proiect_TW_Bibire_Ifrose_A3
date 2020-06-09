@@ -1,9 +1,8 @@
-Options -MultiViews
+Options -Indexes
+
 RewriteEngine On
 
-RewriteBase /twApp
-
-RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-
-RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+RewriteCond %{REQUEST_URI} !/api/
+RewriteRule ^(.+)$ index.php?url=$1 [QSA]
+RewriteRule ^api/.+$ app/api/rest-service.php [NC,L]

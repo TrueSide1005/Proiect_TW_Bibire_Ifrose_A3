@@ -9,7 +9,7 @@ getData();
 function getData() {
 
     var request = new XMLHttpRequest();
-     request.open('GET', '/twApp/app/models/Chart.php?q=' + set, true);
+     request.open('GET', '/app/models/Chart.php?q=' + set, true);
 
     request.onload = function () {
         if (this.status >= 200 && this.status < 400) {

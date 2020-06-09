@@ -5,13 +5,13 @@
     <meta name="description" content="Statistics page">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="/twApp/public/images/flag.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/public/images/flag.ico" />
     <title>Statistici</title>
-    <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="/twApp/public/css/file.css"  media="all"/>
+    <link rel="stylesheet" type="text/css" href="/public/css/menu.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="/public/css/file.css"  media="all"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"  media="all"/>
     <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
-    <script async language="javascript" type="text/javascript" src="/twApp/public/js/down.js"></script>
+    <script async language="javascript" type="text/javascript" src="/public/js/down.js"></script>
 </head>
 
 <body>
@@ -118,13 +118,13 @@
 <script type="text/javascript">
     var set = new Array("<?= $data[0]; ?>", "<?= $data[1]; ?>", "<?= $data[2]; ?>", "<?= $data[3]; ?>");
 </script>
-<script type="text/javascript" src="/twApp/public/js/RataChart.js"></script>
-<script src="/twApp/public/js/LineChart.js"></script>
+<script type="text/javascript" src="/public/js/RataChart.js"></script>
+<script src="/public/js/LineChart.js"></script>
 <script type="text/javascript">
     var set = new Array("<?= $data[0]; ?>", "<?= $data[1]; ?>", "<?= $data[2]; ?>", "<?= $data[3]; ?>");
 </script>
-<script async src="/twApp/public/js/MediiChart.js"></script>
-<script src="/twApp/public/js/EducatieChart.js"></script>
-<script src="/twApp/public/js/menu.js"></script>
+<script async src="/public/js/MediiChart.js"></script>
+<script src="/public/js/EducatieChart.js"></script>
+<script src="/public/js/menu.js"></script>
 
 </html>

@@ -12,7 +12,7 @@ async function showData(str) {
         }
     };
     //apelarea getdata.php cu valoarea din form ca parametru
-    xmlhttp.open("GET", "/twApp/app/models/getdata.php?q=" + str, false);
+    xmlhttp.open("GET", "/app/models/getdata.php?q=" + str, false);
     xmlhttp.send();
     buildMap(ok);
 }

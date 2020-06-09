@@ -22,7 +22,7 @@ var style = new ol.style.Style({
   
   var vectorLayer = new  ol.layer.Vector({
     source: new ol.source.Vector({
-      url: '/twApp/public/data/geojson/Ro.geojson',
+      url: '/public/data/geojson/Ro.geojson',
       format: new ol.format.GeoJSON()
     }),
     style: function(feature) {

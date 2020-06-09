@@ -55,7 +55,7 @@ class Registru
                 $stm->bind_param("ssssss", $nume, $email, $parola, $judet, $create_at, $update_at);
                 $stm->execute();
                 $stm->close();
-                header('Location: /twApp/');
+                header('Location:/');
             }
         }
     }

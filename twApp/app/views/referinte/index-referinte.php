@@ -4,10 +4,10 @@
 <head>
     <title>RoSom</title>
     <meta name="description" content="Referinte page">
-    <link rel="shortcut icon" type="image/x-icon" href="/twApp/public/images/flag.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/public/images/flag.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" />
-    <link rel="stylesheet" type="text/css" href="/twApp/public/css/refrinte.css" />
+    <link rel="stylesheet" type="text/css" href="/public/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="/public/css/refrinte.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -29,6 +29,6 @@
         </div>
     </div>
 </body>
-<script src="/twApp/public/js/menu.js"></script>
+<script src="/public/js/menu.js"></script>
 
 </html>
