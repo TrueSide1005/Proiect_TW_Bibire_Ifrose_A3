@@ -6,10 +6,6 @@ if (isset($_SESSION['err'])) {
   echo "<script> alert(\"$err\");</script>";
   session_unset();
   session_destroy();
-} else if(isset($_SESSION['thank'])){
-  $err = $_SESSION['thank'];
-  echo "<script> alert(\"$err\");</script>";
-  session_unset($_SESSION['thank']);
 } ?>
 
 

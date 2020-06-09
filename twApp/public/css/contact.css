@@ -32,7 +32,7 @@ input[type=submit]:hover {
 }
 
 body{
-    background-image: url("/twApp/public/images/office.jpg");
+    background-image: url("/public/images/office.jpg");
 }
 
 .send-to {
@@ -43,6 +43,13 @@ body{
     width: 65%;
     padding: 20px;
     background-color: #f44336;
+    color: white;
+}
+
+#good {
+    width: 65%;
+    padding: 20px;
+    background-color: #1a6e17;
     color: white;
 }
 
