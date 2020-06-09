@@ -26,6 +26,6 @@ async function csvData() {
         }
     };
     //apelarea csvExport.php cu valoarea primita in form-ul cu id-ul "jud"
-    xmlhttp.open("GET", "/twApp/app/models/csvExport.php?q=" + str, false);
+    xmlhttp.open("GET", "/app/models/csvExport.php?q=" + str, false);
     xmlhttp.send();
 }

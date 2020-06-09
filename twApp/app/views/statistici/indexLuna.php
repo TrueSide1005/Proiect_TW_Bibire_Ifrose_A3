@@ -1,3 +1,9 @@
+<?php session_start();
+if (!isset($_SESSION['user_id'])) {
+    $_SESSION['err'] = "You have to login!";
+    header("Location:/");
+}
+?>
 <!DOCTYPE html>
 <html lang="ro">
 
@@ -7,9 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="/public/images/flag.ico" />
     <title>Statistici</title>
-    <link rel="stylesheet" type="text/css" href="/public/css/menu.css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="/public/css/file.css"  media="all"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"  media="all"/>
+    <link rel="stylesheet" type="text/css" href="/public/css/menu.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="/public/css/file.css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
     <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
     <script async language="javascript" type="text/javascript" src="/public/js/down.js"></script>
 </head>
@@ -18,7 +24,7 @@
 
     <?php require_once  __DIR__ . '/../../components/header.php' ?>
 
-    <div class="antet"> 
+    <div class="antet">
         <h3 id="titlu">Date si resurse</h3>
         <hr class="linie_titlu"> <br>
     </div>
@@ -74,7 +80,7 @@
 
     <div class="bar">
         <p class="paragraph"> Structura şomerilor înregistrați în evidențele ANOFM structurați pe judeţe, medii de
-             rezidenţe(urban/rural) şi sexe raportat la mediul de rezidență.</p>
+            rezidenţe(urban/rural) şi sexe raportat la mediul de rezidență.</p>
         <div class="download">
             <button class="button">Descărcare <i class="fa fa-caret-down"></i></button>
 
@@ -94,9 +100,9 @@
     </div>
 
     <div class="bar">
-        <p class="doc"> Situaţie statistică cu privire la numărul şomerilor înregistraţi în evidenţele ANOFM structurați pe județe și nivel de educație 
+        <p class="doc"> Situaţie statistică cu privire la numărul şomerilor înregistraţi în evidenţele ANOFM structurați pe județe și nivel de educație
             (fără studii, învațământ primar, gimnazial, liceal, postliceal, profesional/arte și meserii, universitar).</p>
-            <div class="download">
+        <div class="download">
             <button class="button">Descărcare <i class="fa fa-caret-down"></i></button>
 
             <form class="download-content" action="" method="post">
