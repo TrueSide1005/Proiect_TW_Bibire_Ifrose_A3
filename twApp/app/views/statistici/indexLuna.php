@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="/twApp/public/css/file.css"  media="all"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"  media="all"/>
-    <script async language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
     <script async language="javascript" type="text/javascript" src="/twApp/public/js/down.js"></script>
 </head>
 
