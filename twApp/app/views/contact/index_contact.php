@@ -63,8 +63,10 @@
                             $stm->bind_param("ss", $email, $prob);
                             $stm->execute();
                             $stm->close();
-                            $_SESSION['thank']="Thank you for your report!";
-                            header("Location:/");
+                            echo "<div id=\"good\">
+                                            <span id=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span> 
+                                            <strong>Va multumim pentru feedback!</strong>
+                                            </div>";
                         } else { //daca parola e incorecta se afiseaza un mesaj de eroare la logare
                             echo "<div id=\"alert\">
                                             <span id=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span> 

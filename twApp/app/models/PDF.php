@@ -8,7 +8,7 @@ class PDF
 
         require __DIR__ . '/../config.php';
 
-        require('/public/libs/fpdf182/fpdf.php');
+        require __DIR__ . '/../libs/fpdf182/fpdf.php';
 
         $pdf = new FPDF();
         $pdf->AddPage();
