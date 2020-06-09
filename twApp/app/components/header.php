@@ -38,6 +38,7 @@
         </li>
 
         <li><a href=/referinte/index-referinte>Referinte</a></li>
+        <li><a href=/contact/index-contact>Contact</a></li>
       </ul>
 
       <div class="sign">

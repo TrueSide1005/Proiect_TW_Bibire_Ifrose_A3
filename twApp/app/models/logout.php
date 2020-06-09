@@ -8,4 +8,3 @@ if (session_status() == 2 && isset($_SESSION['user_id'])) {
 } else { //altfel nu este logat
     echo "Nu sunteti logat!";
 }
-  
