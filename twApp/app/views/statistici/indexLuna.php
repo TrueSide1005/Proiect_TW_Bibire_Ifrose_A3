@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="/twApp/public/images/flag.ico" />
-    <title>RoSom</title>
-    <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/twApp/public/css/file.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Statistici</title>
+    <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="/twApp/public/css/file.css"  media="all"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"  media="all"/>
     <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
-    <script async src="/twApp/public/js/map/mini.js"></script>
+    <script async language="javascript" type="text/javascript" src="/twApp/public/js/down.js"></script>
 </head>
 
 <body>
@@ -36,8 +36,8 @@
                 <input type="submit" name="ExportRata" value="Descărcare-CSV" />
                 <input type="submit" name="ExportRata" value="Descărcare-PDF" />
             </form>
-            <button id="btn-download" class="button" onclick="doSVG();">Descărcare SVG</button><a id="link"></a>
-            <button id="btn-download" class="button" onclick="doCapture();">Descărcare PNG</button><a id="link"></a>
+            <button id="btn-download" class="button" onclick="doSVG('total');">Descărcare SVG</button><a id="link"></a>
+            <button id="btn-download" class="button" onclick="doCapture('total');">Descărcare PNG</button><a id="link"></a>
 
         </div>
 
@@ -60,14 +60,14 @@
                 <input type="submit" name="ExportRata" value="Descărcare-CSV" />
                 <input type="submit" name="ExportRata" value="Descărcare-PDF" />
             </form>
-            <button id="btn-download" class="button" onclick="doSVG();">Descărcare SVG</button><a id="link"></a>
-            <button id="btn-download" class="button" onclick="doCapture();">Descărcare PNG</button><a id="link"></a>
+            <button id="btn-download" class="button" onclick="doSVG('line');">Descărcare SVG</button><a id="link"></a>
+            <button id="btn-download" class="button" onclick="doCapture('line');">Descărcare PNG</button><a id="link"></a>
 
         </div>
 
     </div>
 
-    <div class="diagram-container">
+    <div class="diagram-container" id="s2">
         <div class="diagram"> <canvas id="line"></canvas></div>
     </div>
 
@@ -83,8 +83,8 @@
                 <input type="submit" name="ExportRata" value="Descărcare-CSV" />
                 <input type="submit" name="ExportRata" value="Descărcare-PDF" />
             </form>
-            <button id="btn-download" class="button" onclick="doSVG();">Descărcare SVG</button><a id="link"></a>
-            <button id="btn-download" class="button" onclick="doCapture();">Descărcare PNG</button><a id="link"></a>
+            <button id="btn-download" class="button" onclick="doSVG('medii');">Descărcare SVG</button><a id="link"></a>
+            <button id="btn-download" class="button" onclick="doCapture('medii');">Descărcare PNG</button><a id="link"></a>
 
         </div>
     </div>
@@ -104,8 +104,8 @@
                 <input type="submit" name="ExportRata" value="Descărcare-CSV" />
                 <input type="submit" name="ExportRata" value="Descărcare-PDF" />
             </form>
-            <button id="btn-download" class="button" onclick="doSVG();">Descărcare SVG</button><a id="link"></a>
-            <button id="btn-download" class="button" onclick="doCapture();">Descărcare PNG</button><a id="link"></a>
+            <button id="btn-download" class="button" onclick="doSVG('educatie');">Descărcare SVG</button><a id="link"></a>
+            <button id="btn-download" class="button" onclick="doCapture('educatie');">Descărcare PNG</button><a id="link"></a>
 
         </div>
     </div>

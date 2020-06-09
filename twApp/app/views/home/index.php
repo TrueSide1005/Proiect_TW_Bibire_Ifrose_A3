@@ -10,6 +10,7 @@
   <meta name="description" content="This is my page">
   <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" />
   <link rel="stylesheet" href="/twApp/public/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
