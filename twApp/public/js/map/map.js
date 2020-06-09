@@ -2,7 +2,7 @@ var map;
 var a;
 var ok = 0;
 
-async function showUser(str) {
+async function showData(str) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

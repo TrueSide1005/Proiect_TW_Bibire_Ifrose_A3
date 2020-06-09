@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/twApp/public/css/menu.css" />
     <script language="javascript" type="text/javascript" src="/twApp/public/js/pass.js"></script>
     <link rel="stylesheet" type="text/css" href="/twApp/public/css/auth.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -64,10 +65,7 @@
                                     if ($s == 2) {
                                         //daca parola e corecta se seteaza $_SESSION si se afiseaza mesaj de logare
                                         if (is_numeric($_SESSION['user_id'])) {
-                                            echo "<div id=\"good\">
-                                            <span id=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span> 
-                                            <strong>V-ati logat!</strong> Bun venit!
-                                            </div>";
+                                            header('Location: /twApp/');
                                         }
                                     }
                                 } else { //daca parola e incorecta se afiseaza un mesaj de eroare la logare

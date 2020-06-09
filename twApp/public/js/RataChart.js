@@ -17,7 +17,6 @@ function getData() {
             
  
             var data = JSON.parse(this.response);
-            //console.log(data);
 
             for (var i in data) {
                 judete.push(data[i].Judet);
