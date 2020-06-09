@@ -12,5 +12,5 @@ btn.addEventListener( 'click', onBtnClick)
 
 function onBtnClick(){
   sublist.classList.toggle('sublist');
-  console.log("clik");
+  //console.log("clik");
 }

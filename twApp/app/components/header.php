@@ -36,7 +36,7 @@
             <li><a href='/statistici/Aprile2019'>Martie 2019</a></li>
           </ul>
         </li>
-
+        <li><a href=/contact/index-contact>Contact</a></li>
         <li><a href=/referinte/index-referinte>Referinte</a></li>
       </ul>
 

@@ -5,7 +5,7 @@
 .logout {
     position: absolute;
     right: 13px;
-    bottom: 13px;
+    bottom: 50px;
     padding: 3px;
     display: inline;
     border: solid white;
@@ -17,7 +17,7 @@
 }
 
 .image-div {
-    background-image: url("/twApp/public/images/office.jpg");
+    background-image: url("/public/images/office.jpg");
     left: 0;
     position: absolute;
     flex-direction: row;

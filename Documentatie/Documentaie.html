@@ -168,6 +168,12 @@
 
 				</ol>
 			</li>
+			<li>
+				<a href="#referinte">
+					<span> 6. </span>
+					Referinte
+				</a>
+			</li>
 		</ol>
 	</div>
 
@@ -218,13 +224,13 @@
 					resource="https://github.com/TrueSide1005/Proiect_TW_Bibire_Ifrose_A3/" property="schema:citation"
 					id="github">
 					<cite property="schema:name">
-						<a href="https://github.com/TrueSide1005/Proiect_TW_Bibire_Ifrose_A3/">Github</a>
+						<a href="https://github.com/TrueSide1005/Proiect_TW_Bibire_Ifrose_A3/" target="blank">Github</a>
 					</cite>
 				</li>
 				<li typeof="schema:WebPage" role="link" resource="https://app.swaggerhub.com/"
 					property="schema:citation" id="swagger">
 					<cite property="schema:name">
-						<a href="https://app.swaggerhub.com/">Swagger</a>
+						<a href="https://app.swaggerhub.com/" target="blank">Swagger</a>
 					</cite>
 				</li>
 			</ul>
@@ -433,7 +439,7 @@
 			sublistele din meniu se apasa click pe elementul ce are in dreptul lui o sageata cu orientarea in jos.
 			Iconitele pentru sagetile din meniu,
 			pentru deschiderea si inchiderea meniului au fost preluate de pe <cite property="schema:name">
-				<a href="https://icons8.com/">Icons8</a>.</cite>
+				<a href="https://icons8.com/"  target="blank">Icons8</a>.</cite>
 		</p>
 		<section id="signupfront">
 			<h3>
@@ -514,7 +520,7 @@
 				educatie. Diagramele pentru a ilustra statisticile specifice fiecărui criteriu au fost realizate in
 				javascript prin intermediul instrumentului
 				<cite property="schema:name">
-					<a href="https://www.chartjs.org/">Chart.js</a></cite>.
+					<a href="https://www.chartjs.org/" target="blank">Chart.js</a></cite>.
 			<p>Statisticile pentru fiecare criteriu pot fi exportate de utilizator in trei tipuri de document: PDF, CSV,
 				XML. Formatele sun afisate într-o listă în urma hover-ului pe butonul Descarcă. Butoanele Descarcă PNG,
 				Descarcă SVG exportă diagramele in formatele specificate.
@@ -686,7 +692,8 @@
 			<p>
 				Pe aceasta pagina se va afisa o interpretare a datelor din tabela "data" sub forma unei harti
 				choropleth.
-				Aceasta este generata folosind <i>"Leaflet"</i>, iar datele afisate pe harta corespund coloanei alese
+				Aceasta este generata folosind <a href="http://leafletjs.com/" target="blank"><i>Leafletjs</i></a>, iar
+				datele afisate pe harta corespund coloanei alese
 				prin form-ul de pe pagina, folosind Ajax (public/js/map/map.js).
 				In functie de valoarea selectata de utilizator in cadrul form-ului, vor fi preluate anumite date din
 				baza de date
@@ -698,7 +705,7 @@
 				<figcaption>Fig.30- Fisierul map.js</figcaption>
 			</figure>
 			<p>Harta va putea fi salvata sub forma de PNG si SVG, folosind biblioteca javascript
-				<i>"html2canvas"</i>, functiile
+				<a href="https://github.com/niklasvh/html2canvas" target="blank"><i>Html2canvas</i></a>, functiile
 				pentru fiecare conversie fiind gasite in public/js/map/capture.js, respectiv public/js/map/svg.js.
 			</p>
 			<figure typeof="sa:image">
@@ -725,7 +732,8 @@
 			</figure>
 			<p>Pentru eficienta maxima a site-ului, toate fisierele javascript mentionate mai sus, au fost
 				compresate in fisierul mini.js din folderul
-				public/js/map folosind tool-ul <i>"terser"</i>.
+				public/js/map folosind tool-ul <a href="https://github.com/terser/terser"
+					target="blank"><i>Terser</i></a>.
 			</p>
 		</section>
 
@@ -738,7 +746,7 @@
 				Pagina permite vizualizare staticticilor criteriale despre somaj prin intermediul chart-urilor
 				construite cu instrumentul
 				<cite property="schema:name">
-					<a href="https://www.chartjs.org/">Chart.js</a>
+					<a href="https://www.chartjs.org/" target="blank">Chart.js</a>
 				</cite>
 				Preluarea datelor pentru construcția diagramelor se realizeaza cu Ajax. In functie de luna aleasa de
 				utilizator in controller-ul statistici.php sunt trimise catre view-ul indexLuna.php locatile de selectie
@@ -779,14 +787,14 @@
 				Constructia fiserelu XML s-a realizat folosind modelul DOM. In urma apelului constructorului in XML.php
 				este construit documentulu
 				si trimis catre export prin <cite property="schema:name">
-					<a href="https://www.php.net/manual/en/function.header.php">header() </a>
+					<a href="https://www.php.net/manual/en/function.header.php" target="blank">header() </a>
 				</cite> setand specificatiile conform transferul de documente xml.
 			</p>
 
 			<p>
 				Documentele CSV sunt construite in modelul CSV.php iar scrierea in document se realizeaza cu functia
 				<cite property="schema:name">
-					<a href="https://www.php.net/manual/en/function.fputcsv.php">fputcsv() </a> </cite> setand header()
+					<a href="https://www.php.net/manual/en/function.fputcsv.php" target="blank">fputcsv() </a> </cite> setand header()
 				specific
 				pentru exportarea documentelor CSV
 
@@ -794,7 +802,7 @@
 
 			<p>
 				Documentele PDF sunt construiete cu ajutorulu librariei <cite property="schema:name">
-					<a href="http://www.fpdf.org/">fpdf</a>.
+					<a href="http://www.fpdf.org/" target="blank">fpdf</a>.
 				</cite>
 			</p>
 
@@ -811,7 +819,8 @@
 				Acesta este rugat sa si faca un cont daca nu are unul altfel cererea nu va fi luata in considerare
 			</p>
 			<p>
-				Daca are un cont sau si a facut unul este verificat daca email-ul pe care il introduce este cel valid daca nu va fi atentionat
+				Daca are un cont sau si a facut unul este verificat daca email-ul pe care il introduce este cel valid
+				daca nu va fi atentionat
 				print-un mesaj de eroare, la fel daca nu sunt completate toate campurile.
 			</p>
 			<p>
@@ -823,6 +832,16 @@
 				<figcaption>Fig.38- Validare pentru problema transmisa</figcaption>
 			</figure>
 		</section>
+	</section>
+	<section id="referinte">
+		<h3>
+			Referinte
+		</h3>
+		<a href="https://data.gov.ro/dataset?q=somaj&sort=metadata_modified+desc" target="blank">Data.Gov.Ro</a>
+		<br><a href="https://www.chartjs.org/" target="blank">Chartjs.org</a>
+		<br><a href="http://leafletjs.com/" target="blank">Leafletjs</a>
+		<br><a href="https://github.com/niklasvh/html2canvas" target="blank">Html2canvas</a>
+		<br><a href="https://github.com/terser/terser" target="blank">Terser</a>
 	</section>
 
 </body>

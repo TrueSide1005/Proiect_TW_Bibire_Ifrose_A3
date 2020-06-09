@@ -1,25 +1,17 @@
 .center {
-    margin: auto;
     width: 60%;
-    align-self: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }
 
-input[type=text], select {
+#email, #problem{
     width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type=password], select {
-    width: 70%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -29,7 +21,7 @@ input[type=submit] {
     background-color: #5D6D7E;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 8 16px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -40,25 +32,7 @@ input[type=submit]:hover {
 }
 
 body{
-    background-image: url("/public/images/office.jpg");
-}
-
-.image-div {
-    left: 0;
-    position: absolute;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-start;
-    flex-flow: row wrap;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    display: flex;
-    background-position: center;
-    background-repeat: repeat;
-    background-size: cover;
-    overflow: auto;
-    color: white;
+    background-image: url("/twApp/public/images/office.jpg");
 }
 
 .send-to {
@@ -69,13 +43,6 @@ body{
     width: 65%;
     padding: 20px;
     background-color: #f44336;
-    color: white;
-}
-
-#good {
-    width: 65%;
-    padding: 20px;
-    background-color: #1a6e17;
     color: white;
 }
 
@@ -96,7 +63,7 @@ body{
 
 .form{
     border: solid white;
-    padding-left: 20px;
+    padding-left: 30px;
     border-radius: 4px;
     backdrop-filter: blur(5px);
 }
