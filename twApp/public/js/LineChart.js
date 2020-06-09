@@ -32,7 +32,7 @@ function getData() {
                 set6.push(data[i].peste55);
             }
 
-            var ctx = document.getElementById("line-chart");
+            var ctx = document.getElementById("line");
 
             var myChart = new Chart(ctx, {
                 type: 'line',

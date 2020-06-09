@@ -2,7 +2,6 @@
 
 require_once "map-routes.php";
 require_once "month-statistics-routes.php";
-//require_once "statistics-citys-routes.php";
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
@@ -12,8 +11,6 @@ $allHeaders = getallheaders();
 $allRoutes = [
     ...$mapRoutes,
     ...$monthStatisticsRoutes,
-    // ...$statisticsCitysRoutes,
-    // ...other-arrays-routes 
 ];
 
 
@@ -42,12 +39,11 @@ function parseRequest($routeConfig)
     $regExpString = routeExpToRegExp($routeConfig['route']);
 
     if (preg_match("/$regExpString/", $url, $matches)) {
-        // echo "ruta corecta";
         $params = [];
         $query = [];
         $parts = explode('/', $routeConfig['route']);
 
-        // Params 
+        // Parameters
         $index = 1;
         foreach ($parts as $p) {
             if ($p[0] === ':') {
@@ -55,7 +51,6 @@ function parseRequest($routeConfig)
                 $index++;
             }
         }
-        //echo var_dump($params); // { ["itemName"]=> string(x) "itemValue" ... }
 
         // Query
         if (strpos($url, '?')) {
@@ -68,7 +63,6 @@ function parseRequest($routeConfig)
                 }
             }
         }
-        // echo var_dump($query);
 
         // Payload
         $payload = file_get_contents('php://input');
@@ -79,7 +73,7 @@ function parseRequest($routeConfig)
         }
 
 
-        // if middlewares =>  run them first
+        // verfy middlewares 
 
         if (isset($routeConfig['middlewares'])) {
             foreach ($routeConfig['middlewares'] as $middlewareName) {
@@ -107,13 +101,16 @@ function parseRequest($routeConfig)
     return false;
 }
 
+
+//manage 404 error
 function handle404()
 {
     Response::status(404);
     echo "Not found";
-
 }
 
+
+//parsing route with regex expression
 function routeExpToRegExp($route)
 {
     $regExpString = "";

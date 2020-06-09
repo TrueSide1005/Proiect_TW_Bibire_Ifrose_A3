@@ -113,7 +113,13 @@
 					</li>
 					<li>
 						<a href="#referintefront">
-							<span> 4.5. </span>
+							<span> 4.6. </span>
+							Statistici
+						</a>
+					</li>
+					<li>
+						<a href="#contactfront">
+							<span> 4.7. </span>
 							Statistici
 						</a>
 					</li>
@@ -404,11 +410,27 @@
 			Front End
 		</h3>
 
-		<p>Toate paginile site-ului sunt responsive, redimensionarea in pagina are loc automat in functie de
-			dimensiunile ecranului
-			dispozitivul utilizat, inclusiv pe device-uri ca iPhone 5 SE, cu ecran ingust.
+
+		<p>Paginile site-ului sunt responsive, redimensionarea in pagina are loc automat in functie de
+			dimensiunile ecranului dispozitivul utilizat, inclusiv pe device-uri ca iPhone 5 SE, cu ecran ingust.
 		</p>
 
+		<p>Partea de sus a site-ului este aceiasi pentru toate paginile, reprezentând meniul de navigare. Aceasta este
+			compusa
+			din logo-ul site-ului si denumirile paginilor existente. In privinta adaptarii meniului pentru dispozitivele
+			mobile acesta este
+			inclus intr-o lista ce poate fi accesata prin apasarea butonului ce va aprea automat in partea dreapta sus
+			la redimemsionarea paginii. </p>
+
+		<p>Navigarea peste elementele meniului pe ecrane mari este interactiva, acestea in urma hover-ului fie
+			schimandu-si culoarea textului,
+			dimensiunea, culoarea de fundal sau afisand in caz de existenta elemente aflate in subordine. Pentru
+			dipozitive mobile pentru a afisa
+			sublistele din meniu se apasa click pe elementul ce are in dreptul lui o sageata cu orientarea in jos.
+			Iconitele pentru sagetile din meniu,
+			pentru deschiderea si inchiderea meniului au fost preluate de pe <cite property="schema:name">
+				<a href="https://icons8.com/">Icons8</a>.</cite>
+		</p>
 		<section id="signupfront">
 			<h3>
 				Sign-Up
@@ -466,10 +488,36 @@
 
 		</section>
 
+
 		<section id="statisticifront">
 			<h3>
 				Statistici
 			</h3>
+
+			<p>
+				Pagina Statistici are denumirea indexLuna.php si se află în app/views/statistici.
+			</p>
+			<p>
+				Aceasta conține statisticile somajului pe baza a patru criterii dispuse pe site in ordinea: numar total
+				ri rata pe sexe, grupe de varstă, medii de rezidență si
+				educatie. Diagramele pentru a ilustra statisticile specifice fiecărui criteriu au fost realizate in
+				javascript prin intermediul instrumentului
+				<cite property="schema:name">
+					<a href="https://www.chartjs.org/">Chart.js</a></cite>.
+			<p>Statisticile pentru fiecare criteriu pot fi exportate de utilizator in trei tipuri de document: PDF, CSV,
+				XML. Formatele sun afisate într-o listă în urma hover-ului pe butonul Descarcă. Butoanele Descarcă PNG,
+				Descarcă SVG exportă diagramele in formatele specificate.
+			</p>
+
+			<p>
+				Primul chart 
+			</p>
+			</p>
+			<p>Pagina Statistici:</p>
+			<figure typeof="sa:image">
+				<img src="images/statistics.png">
+				<figcaption>Fig.17- Pagina Statistici</figcaption>
+			</figure>
 
 		</section>
 
@@ -478,10 +526,26 @@
 				Referinte
 			</h3>
 			<p>Pagina Referinte are denumirea index-referinte.php si se gaseste in app/views/referinte.</p>
+			<p>În cadrul ei sunt incluse o serie de link-uri către instrumentele folosite în construcția site-ului.</p>
 			<p>Pagina Referinte:</p>
 			<figure typeof="sa:image">
 				<img src="images/referinte.png">
-				<figcaption>Fig.17- Pagina Referinte</figcaption>
+				<figcaption>Fig.18- Pagina Referinte</figcaption>
+			</figure>
+		</section>
+
+		<section id="contactfront">
+			<h3>
+				Contact
+			</h3>
+			<p>Pagina Referinte are denumirea index-contact.php si se gaseste in app/views/contact.</p>
+			<p>Aceasta pune la dispoziția utilizatorului un formular prin care poate semnala o problema, dar cu
+				specifactia existentei
+				unui realizării unui cont dacă acesta nu a fost creat. </p>
+			<p>Pagina Contact:</p>
+			<figure typeof="sa:image">
+				<img src="images/contact.png">
+				<figcaption>Fig.19- Pagina Referinte</figcaption>
 			</figure>
 		</section>
 

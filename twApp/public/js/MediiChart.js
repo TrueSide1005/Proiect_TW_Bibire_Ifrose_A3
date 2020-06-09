@@ -24,7 +24,7 @@ async function getData() {
                 setRF.push(data[i].nr_barbati_rural);
 
             }
-            var ctx = document.getElementById("medii-chart");
+            var ctx = document.getElementById("medii");
 
             var myChart = new Chart(ctx, {
                 type: 'bar',
@@ -53,7 +53,7 @@ async function getData() {
                 options: {
                     title: {
                         display: true,
-                        text: 'Population growth (millions)'
+                        text: 'Somajul pe medii de rezidenta'
                     }
                 }
             });

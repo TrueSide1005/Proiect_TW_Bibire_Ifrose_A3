@@ -21,7 +21,7 @@ function getData() {
 
 
             var data = JSON.parse(this.response);
-            console.log(data);
+            //console.log(data);
 
             for (var i in data) {
                 // judete.push(data[i].Judet);
@@ -34,7 +34,7 @@ function getData() {
                 setIU.push(data[i].invatamant_universitar);
             }      
 
-            var ctx = document.getElementById("educatie-chart");
+            var ctx = document.getElementById("educatie");
 
             var myChart = new Chart(ctx, {
                 type: 'bar',
@@ -72,6 +72,11 @@ function getData() {
                     
                 },
             options: {
+                title: {
+                        display: true,
+                        text: 'Somajul pe nivel de educatie'
+                },
+
                 tooltips: {
                   displayColors: true,
                   callbacks:{
