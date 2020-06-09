@@ -18,7 +18,7 @@
 
     <?php require_once  __DIR__ . '/../../components/header.php' ?>
 
-    <div class="antet">
+    <div class="antet"> 
         <h3 id="titlu">Date si resurse</h3>
         <hr class="linie_titlu"> <br>
     </div>

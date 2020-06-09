@@ -11,11 +11,9 @@
 </head>
 
 <body>
-	<header>
-		<h1>RunDa Scholarly HTML</h1>
-	</header>
 
 	<div role="contentinfo">
+		<h1>RunDa Documentatie</h1>
 		<ol role="directory">
 			<li>
 				<a href="#autori">
@@ -120,7 +118,7 @@
 					<li>
 						<a href="#contactfront">
 							<span> 4.7. </span>
-							Statistici
+							Contact
 						</a>
 					</li>
 				</ol>
@@ -157,6 +155,12 @@
 					</li>
 					<li>
 						<a href="#statisticiback-end">
+							<span> 5.3. </span>
+							Statisti
+						</a>
+					</li>
+					<li>
+						<a href="#contactback-end">
 							<span> 5.3. </span>
 							Statisti
 						</a>
@@ -497,6 +501,13 @@
 			<p>
 				Pagina Statistici are denumirea indexLuna.php si se află în app/views/statistici.
 			</p>
+
+			<p>Pagina Statistici:</p>
+			<figure typeof="sa:image">
+				<img src="images/statistics.png">
+				<figcaption>Fig.17- Pagina Statistici</figcaption>
+			</figure>
+
 			<p>
 				Aceasta conține statisticile somajului pe baza a patru criterii dispuse pe site in ordinea: numar total
 				ri rata pe sexe, grupe de varstă, medii de rezidență si
@@ -510,14 +521,49 @@
 			</p>
 
 			<p>
-				Primul chart 
+				Primul chart este un bar chart. Pe axa X a chart-ului sunt judetele, iar pe axa Y numarul
+				total de someri corespunzatori lunii si categoriei de varsta.
 			</p>
-			</p>
-			<p>Pagina Statistici:</p>
+
 			<figure typeof="sa:image">
-				<img src="images/statistics.png">
-				<figcaption>Fig.17- Pagina Statistici</figcaption>
+				<img src="images/firstchart.png">
+				<figcaption>Fig.18- Chart pentru numar total șomeri </figcaption>
 			</figure>
+			<p>
+				Al doilea este un line chart, ce va contine cate o inregistrare inregistrare pentru fiecare grupa de
+				varsta. Pe axa X a chart-ului sunt judetele, iar pe axa Y numarul
+				total de someri corespunzatori lunii si categoriei de varsta.
+			</p>
+
+			<figure typeof="sa:image">
+				<img src="images/secondchart.PNG">
+				<figcaption>Fig.19- Chart pentru someri pe grupe de varsta</figcaption>
+			</figure>
+			<p>
+				Al treilea chart este un grup bar chart continand pentru fiecare judet 4 inregistrari : numar someri
+				femei urban, numar someri barbati urban,
+				numar someri femei rural, numar someri barbati rural.
+			</p>
+
+			<figure typeof="sa:image">
+				<img src="images/third.PNG">
+				<figcaption>Fig.20- Chart pentru someri pe medii de rezidentă</figcaption>
+			</figure>
+			<p>
+				Al patrulea este un stacked bar chart, ce va contine cate o inregistrare pentru fiecare grupa de varsta.
+				Pe axa X a chart-ului sunt judetele, iar pe axa Y numarul
+				de someri fara studii, invatamant primar, invatamant gimnazial, invatamant liceal, invatamant posticeal,
+				invatamant profesional, invatamant
+				universitar.
+			</p>
+
+			<figure typeof="sa:image">
+				<img src="images/chart4.PNG">
+				<figcaption>Fig.21- Chart pentru someri grupati in functie de studii</figcaption>
+			</figure>
+
+
+
 
 		</section>
 
@@ -530,7 +576,7 @@
 			<p>Pagina Referinte:</p>
 			<figure typeof="sa:image">
 				<img src="images/referinte.png">
-				<figcaption>Fig.18- Pagina Referinte</figcaption>
+				<figcaption>Fig.22- Pagina Referinte</figcaption>
 			</figure>
 		</section>
 
@@ -538,14 +584,13 @@
 			<h3>
 				Contact
 			</h3>
-			<p>Pagina Referinte are denumirea index-contact.php si se gaseste in app/views/contact.</p>
+			<p>Pagina Contact are denumirea index-contact.php si se gaseste in app/views/contact.</p>
 			<p>Aceasta pune la dispoziția utilizatorului un formular prin care poate semnala o problema, dar cu
-				specifactia existentei
-				unui realizării unui cont dacă acesta nu a fost creat. </p>
+				specifactia realizării unui cont dacă acesta nu a fost creat. </p>
 			<p>Pagina Contact:</p>
 			<figure typeof="sa:image">
 				<img src="images/contact.png">
-				<figcaption>Fig.19- Pagina Referinte</figcaption>
+				<figcaption>Fig.23- Pagina Contact</figcaption>
 			</figure>
 		</section>
 
@@ -556,6 +601,10 @@
 		<h3>
 			Back End
 		</h3>
+
+		<p>Arhitectura generala a proiectului este bazata pe MVC cu unele execeptii in care s-a optat pentru prelucrea
+			datlelor
+			cu apeluri ajax in schimbul apelului unui model.</p>
 
 		<section id="signupback">
 			<h3>
@@ -570,11 +619,11 @@
 			</p>
 			<figure typeof="sa:image">
 				<img src="images/preluare.png">
-				<figcaption>Fig.18- Preluarea datelor fin form</figcaption>
+				<figcaption>Fig.24- Preluarea datelor din form</figcaption>
 			</figure>
 			<figure typeof="sa:image">
 				<img src="images/verificare.png">
-				<figcaption>Fig.19- Verificarea datelor</figcaption>
+				<figcaption>Fig.25- Verificarea datelor</figcaption>
 			</figure>
 			<p>
 				Daca testele de mai sus sunt trecute, se va insera in tabela "registru" un nou rand continand
@@ -585,11 +634,11 @@
 			</p>
 			<figure typeof="sa:image">
 				<img src="images/inserare.png">
-				<figcaption>Fig.20- Inserarea datelor in baza de date</figcaption>
+				<figcaption>Fig.26- Inserarea datelor in baza de date</figcaption>
 			</figure>
 			<figure typeof="sa:image">
 				<img src="images/error.png">
-				<figcaption>Fig.21- Fisierul db_error.php</figcaption>
+				<figcaption>Fig.27- Fisierul db_error.php</figcaption>
 			</figure>
 		</section>
 
@@ -609,7 +658,7 @@
 			</p>
 			<figure typeof="sa:image">
 				<img src="images/log.png">
-				<figcaption>Fig.22- Login backend</figcaption>
+				<figcaption>Fig.28- Login backend</figcaption>
 			</figure>
 		</section>
 
@@ -625,7 +674,7 @@
 			</p>
 			<figure typeof="sa:image">
 				<img src="images/out.png">
-				<figcaption>Fig.23- Logout backend</figcaption>
+				<figcaption>Fig.29- Logout backend</figcaption>
 			</figure>
 		</section>
 
@@ -635,7 +684,7 @@
 				Resurse Cartografice
 			</h3>
 			<p>
-				Pe aceasta pagina de va afisa o interpretare a datelor din tabela "data" sub forma unei harti
+				Pe aceasta pagina se va afisa o interpretare a datelor din tabela "data" sub forma unei harti
 				choropleth.
 				Aceasta este generata folosind <i>"Leaflet"</i>, iar datele afisate pe harta corespund coloanei alese
 				prin form-ul de pe pagina, folosind Ajax (public/js/map/map.js).
@@ -646,7 +695,7 @@
 			</p>
 			<figure typeof="sa:image">
 				<img src="images/map.png">
-				<figcaption>Fig.24- Fisierul map.js</figcaption>
+				<figcaption>Fig.30- Fisierul map.js</figcaption>
 			</figure>
 			<p>Harta va putea fi salvata sub forma de PNG si SVG, folosind biblioteca javascript
 				<i>"html2canvas"</i>, functiile
@@ -654,11 +703,11 @@
 			</p>
 			<figure typeof="sa:image">
 				<img src="images/png.png">
-				<figcaption>Fig.25- Cod pentru salvarea hartii ca PNG din fisierul capture.js</figcaption>
+				<figcaption>Fig.31- Cod pentru salvarea hartii ca PNG din fisierul capture.js</figcaption>
 			</figure>
 			<figure typeof="sa:image">
 				<img src="images/svg.png">
-				<figcaption>Fig.26- Cod pentru salvarea hartii ca SVG din fisierul svg.js</figcaption>
+				<figcaption>Fig.32- Cod pentru salvarea hartii ca SVG din fisierul svg.js</figcaption>
 			</figure>
 			<p>
 				De asemenea, datele vor putea
@@ -668,11 +717,11 @@
 			</p>
 			<figure typeof="sa:image">
 				<img src="images/csv.png">
-				<figcaption>Fig.27- Cod pentru salvarea hartii ca CSV din fisierul csv.js</figcaption>
+				<figcaption>Fig.33- Cod pentru salvarea hartii ca CSV din fisierul csv.js</figcaption>
 			</figure>
 			<figure typeof="sa:image">
 				<img src="images/csvExport.png">
-				<figcaption>Fig.28- Fisierul csvExport.php</figcaption>
+				<figcaption>Fig.34- Fisierul csvExport.php</figcaption>
 			</figure>
 			<p>Pentru eficienta maxima a site-ului, toate fisierele javascript mentionate mai sus, au fost
 				compresate in fisierul mini.js din folderul
@@ -684,6 +733,95 @@
 			<h3>
 				Statistici
 			</h3>
+
+			<p>
+				Pagina permite vizualizare staticticilor criteriale despre somaj prin intermediul chart-urilor
+				construite cu instrumentul
+				<cite property="schema:name">
+					<a href="https://www.chartjs.org/">Chart.js</a>
+				</cite>
+				Preluarea datelor pentru construcția diagramelor se realizeaza cu Ajax. In functie de luna aleasa de
+				utilizator in controller-ul statistici.php sunt trimise catre view-ul indexLuna.php locatile de selectie
+				a datelor
+				acestea sunt
+				captate in primul script de la sfarsitul body-ului
+				si preluate mai departe de restul scrip-turilor de apel specifice fiecarui fiser de constructie a
+				diagramei corespunzatoare.</p>
+			<p>In fiecare fiser script de contructie a diagramei este apelat prin Ajax Chart.php din models,
+				fiser care construieste un json pe baza join-ului
+				intre tabele specifice unei luni (ex. rataMartie2020, mediiMartie2020, varstaMartie2020,
+				educatieMartie2020) primite
+				in urma apelului Ajax. In fiser script al sunt preluate din json doar datele necesare constructiei
+				diagramei.</p>
+
+			</p>
+
+			<figure typeof="sa:image">
+				<img src="images/chart_ajax.PNG">
+				<figcaption>Fig.35- Apel ajax al fiserului Chart.php</figcaption>
+			</figure>
+
+			<figure typeof="sa:image">
+				<img src="images/chart_php.png">
+				<figcaption>Fig.36- Fisierul Chart.php</figcaption>
+			</figure>
+
+			Exportarea documentelor se realizeaza prin intermediul unui form ce are ca si metoda get si trei inputuri
+			unul pentru descarcare
+			XML, altul pentru CSV si ultimul pentru PDF specifice fiecarui criteriu in parte.
+			<p>Verificarea carui document se doreste descarcarea se face in controlorul statistici.php
+				acesta apeland modelul corespunzator documentului dorit cu tabelul specific si criteriul specific. In
+				functie de criteriu se construieste
+				forma documentului.
+			</p>
+
+			<p>
+				Constructia fiserelu XML s-a realizat folosind modelul DOM. In urma apelului constructorului in XML.php
+				este construit documentulu
+				si trimis catre export prin <cite property="schema:name">
+					<a href="https://www.php.net/manual/en/function.header.php">header() </a>
+				</cite> setand specificatiile conform transferul de documente xml.
+			</p>
+
+			<p>
+				Documentele CSV sunt construite in modelul CSV.php iar scrierea in document se realizeaza cu functia
+				<cite property="schema:name">
+					<a href="https://www.php.net/manual/en/function.fputcsv.php">fputcsv() </a> </cite> setand header()
+				specific
+				pentru exportarea documentelor CSV
+
+			</p>
+
+			<p>
+				Documentele PDF sunt construiete cu ajutorulu librariei <cite property="schema:name">
+					<a href="http://www.fpdf.org/">fpdf</a>.
+				</cite>
+			</p>
+
+
+		</section>
+		<section id="contactback-end">
+			<h3>
+				Contact
+			</h3>
+
+			<p>Utilizatorul poate semnala o problema privind interactiunea in urma navigarii pe site prin completarea
+				unui formular.</p>
+			<p>
+				Acesta este rugat sa si faca un cont daca nu are unul altfel cererea nu va fi luata in considerare
+			</p>
+			<p>
+				Daca are un cont sau si a facut unul este verificat daca email-ul pe care il introduce este cel valid daca nu va fi atentionat
+				print-un mesaj de eroare, la fel daca nu sunt completate toate campurile.
+			</p>
+			<p>
+				Codul de verificare pentru semnalarea problemei:
+			</p>
+
+			<figure typeof="sa:image">
+				<img src="images/contact_code.PNG">
+				<figcaption>Fig.38- Validare pentru problema transmisa</figcaption>
+			</figure>
 		</section>
 	</section>
 
