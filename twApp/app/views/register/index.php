@@ -90,5 +90,5 @@
         </div>
     </div>
 </body>
-
+<script async src="/public/js/menu.js"></script>
 </html>

@@ -2,15 +2,15 @@
   <div class="barmenu">
     <nav>
       <a href="/">
-        <img class="logo" src="/public/images/s.png" alt="Sigla" style="height:3em">
+        <img class="logo" src="/public/images/s.webp" alt="Sigla" style="height:3em">
       </a>
 
       <div class="menu-icons">
 
-        <img class="open" src="/public/images/icons8-menu-24.png" alt="menu ">
+        <img class="open" src="/public/images/icons8-menu-24.webp" alt="menu ">
 
 
-        <img class="close" src="/public/images/icons8-cancel-26.png" alt="cancel">
+        <img class="close" src="/public/images/icons8-cancel-26.webp" alt="cancel">
 
       </div>
 
@@ -30,7 +30,7 @@
             <li><a href='/statistici/Septembrie2019'>Septembrie 2019</a></li>
             <li><a href='/statistici/August2019'>August 2019</a></li>
             <li><a href='/statistici/Iulie2019'>Iulie 2019</a></li>
-            <li><a href='/statistici/Iunie 2019'>Iunie 2019</a></li>
+            <li><a href='/statistici/Iunie2019'>Iunie 2019</a></li>
             <li><a href='/statistici/Mai2019'>Mai 2019</a></li>
             <li><a href='/statistici/Aprilie2019'>Aprile 2019</a></li>
             <li><a href='/statistici/Martie2019'>Martie 2019</a></li>
@@ -38,7 +38,6 @@
         </li>
         <li><a href=/contact/index-contact>Contact</a></li>
         <li><a href=/referinte/index-referinte>Referinte</a></li>
-        <li><a href=/contact/index-contact>Contact</a></li>
       </ul>
 
       <div class="sign">

@@ -32,7 +32,7 @@ input[type=submit]:hover {
 }
 
 body{
-    background-image: url("/public/images/office.jpg");
+    background-image: url("/public/images/office.webp");
 }
 
 .send-to {

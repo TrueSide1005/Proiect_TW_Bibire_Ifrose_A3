@@ -60,6 +60,8 @@
     color: black;
     font-size: medium;
     border: none;
+    margin: 5px;
+    padding: 5px;
 }
 
 .buton-hover:hover, .buton-hover:focus {

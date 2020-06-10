@@ -16,9 +16,9 @@ if (isset($_SESSION['err'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="This is my page" />
   <link rel="shortcut icon" type="image/x-icon" href="/public/images/flag.ico" />
-  <link rel="stylesheet" type="text/css" href="/public/css/menu.css" />
-  <link rel="stylesheet" href="/public/css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/menu.css" media="all"/>
+  <link rel="stylesheet" href="/public/css/styles.css" media="all" />
+  
 </head>
 
 <body>
@@ -27,7 +27,7 @@ if (isset($_SESSION['err'])) {
     <div class="citat break">
       <div class="center">
         <h2> RoSom - afla mai multe despre somajul din Romania </h2><br>
-        <img class="image-m" src="/public/images/ro.png" alt="RoSom" width="194px" height="91px">
+        <img class="image-m" src="/public/images/ro.webp" alt="RoSom" width="194px" height="91px">
       </div>
     </div>
     <button onclick="window.location.href='auth/register'" class="image-btns image-btn">
@@ -37,12 +37,12 @@ if (isset($_SESSION['err'])) {
       <h3>Log in</h3>
     </button>
     <div id="delogare"></div>
-    <img class="logout" src="/public/images/logout.png" onclick="logOut()" alt="Logout" width="48px" height="48px">
+    <img class="logout" src="/public/images/logout.webp" onclick="logOut()" alt="Logout" width="48px" height="48px">
   </div>
 </body>
-<script src="public/js/menu.js"></script>
+<script async src="/public/js/menu.js"></script>
 <script async>
-  function logOut() {
+  async function logOut() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {

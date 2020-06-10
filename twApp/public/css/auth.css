@@ -40,7 +40,7 @@ input[type=submit]:hover {
 }
 
 body{
-    background-image: url("/public/images/office.jpg");
+    background-image: url("/public/images/office.webp");
 }
 
 .image-div {
@@ -59,6 +59,15 @@ body{
     background-size: cover;
     overflow: auto;
     color: white;
+}
+
+#pass{
+    padding-right:10px;
+    margin-right: 10px;
+}
+#show{
+    padding:10px;
+    margin: 10px;
 }
 
 .send-to {
