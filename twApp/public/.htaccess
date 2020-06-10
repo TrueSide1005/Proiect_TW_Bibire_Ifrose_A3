@@ -1,11 +1,14 @@
-Options -Indexes
-
+Options -MultiViews
 RewriteEngine On
+RewriteBase /twApp
 
+#directory checking, if is true execute next rewrite rule 
+RewriteCond %{REQUEST_FILENAME} !-d 
+
+#file checking
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} !/api/
-RewriteRule ^(.+)$ index.php?url=$1 [QSA]
-RewriteRule ^api/.+$ app/api/rest-service.php [NC,L]
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
 
 #The RewriteRule  means that if the request is done  matches ^(.+)$
 #(matches any URL except the server root), it will be rewritten as index.php?url=$1

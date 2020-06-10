@@ -17,10 +17,11 @@ class Response
 }
 
 
+//posibile routes for unemployment and their handler
 $monthStatisticsRoutes = [
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
+        "middlewares" => ["IsLoggedIn"],
         "route" => "statistics/:month/numarul-si-rata",
         "handler" => "getMonthStatisticsNumberRate"
     ],
@@ -28,71 +29,71 @@ $monthStatisticsRoutes = [
 
     [
         "method" => "GET",
-        // "middlewares" => ["IsLoggedIn"],
+        "middlewares" => ["IsLoggedIn"],
         "route" => "statistics/:month/varste",
         "handler" => "getVarsteStatistics"
     ],
 
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
+        "middlewares" => ["IsLoggedIn"],
         "route" => "statistics/:month/medii",
         "handler" => "getMediiStatistics"
     ],
 
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"], 
+        "middlewares" => ["IsLoggedIn"], 
         "route" => "statistics/:month/educatie",
         "handler" => "getEducatieStatistics"
     ],
 
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
-        "route" => "statistics/:month/numarul-si-rata/:city",   //!!!!!!!!!!!!!!!!
+        "middlewares" => ["IsLoggedIn"],
+        "route" => "statistics/:month/numarul-si-rata/:city",   
         "handler" => "getCityMonthStatistics"
     ],
 
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
+        "middlewares" => ["IsLoggedIn"],
         "route" => "statistics/:month/varste/:item-varsta",
         "handler" => "getItemVarsteStatistics"
     ],
 
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
+        "middlewares" => ["IsLoggedIn"],
         "route" => "statistics/:month/judet-varste/:city",
         "handler" => "getCityAgeStatistics"
     ],
 
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
-        "route" => "statistics/:month/judet-medii/:city",   //!!!!!!!!!!!!!!!!
+        "middlewares" => ["IsLoggedIn"],
+        "route" => "statistics/:month/judet-medii/:city",  
         "handler" => "getCityMediiMonthStatistics"
     ],
 
 
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
+        "middlewares" => ["IsLoggedIn"],
         "route" => "statistics/:month/medii/:item-mediu",
         "handler" => "getItemMediiStatistics"
     ],
 
     [
         "method" => "GET",
-        // "middlewares" => ["IsLoggedIn"],
+        "middlewares" => ["IsLoggedIn"],
         "route" => "statistics/:month/educatie/:item-educatie",
         "handler" => "getItemEducatieStatistics"
     ],
 
     [
         "method" => "GET",
-        // "middlewares" => ["IsLoggedIn"],
+        "middlewares" => ["IsLoggedIn"],
         "route" => "statistics/:month/judet-educatie/:city",
         "handler" => "getCityEducatieStatistics"
     ]
