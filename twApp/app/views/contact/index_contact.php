@@ -20,13 +20,12 @@
         <form class="form" action="" method="post" id="add_student_form">
 
             <p>
-                <label for="username"><B>Adresa de email:</B></label>
+                <label for="email"><B>Adresa de email:</B></label>
                 <br><input type="text" id="email" name="E-mail" placeholder="Adresa de email ...">
             </p>
 
             <p>
-                <label for="username"><B>Problema:</B></label>
-
+                <label for="problem"><B>Problema:</B></label>
                 <br><textarea id="problem" name="Semnalare" placeholder="Problema..." style="height:200px"></textarea>
 
             </p>
@@ -89,5 +88,5 @@
         </form>
     </div>
 </body>
-
+<script async src="/public/js/menu.js"></script>
 </html>

@@ -17,7 +17,7 @@
 }
 
 .image-div {
-    background-image: url("/public/images/office.jpg");
+    background-image: url("/public/images/office.webp");
     left: 0;
     position: absolute;
     flex-direction: row;
