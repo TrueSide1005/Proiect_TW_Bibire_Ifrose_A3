@@ -21,44 +21,58 @@ $monthStatisticsRoutes = [
     [
         "method" => "GET",
         //"middlewares" => ["IsLoggedIn"],
-        "route" => "statistics/:month",
-        "handler" => "getMonthStatistics"
+        "route" => "statistics/:month/numarul-si-rata",
+        "handler" => "getMonthStatisticsNumberRate"
     ],
 
 
     [
         "method" => "GET",
-       // "middlewares" => ["IsLoggedIn"],
+        // "middlewares" => ["IsLoggedIn"],
         "route" => "statistics/:month/varste",
         "handler" => "getVarsteStatistics"
     ],
 
     [
         "method" => "GET",
-        "middlewares" => ["IsLoggedIn"],
+        //"middlewares" => ["IsLoggedIn"],
         "route" => "statistics/:month/medii",
         "handler" => "getMediiStatistics"
     ],
 
     [
         "method" => "GET",
-        //"middlewares" => ["IsLoggedIn"],
+        //"middlewares" => ["IsLoggedIn"], 
         "route" => "statistics/:month/educatie",
         "handler" => "getEducatieStatistics"
     ],
 
     [
         "method" => "GET",
-        "middlewares" => ["IsLoggedIn"],
+        //"middlewares" => ["IsLoggedIn"],
         "route" => "statistics/:month/numarul-si-rata/:city",   //!!!!!!!!!!!!!!!!
         "handler" => "getCityMonthStatistics"
     ],
 
     [
         "method" => "GET",
-        "middlewares" => ["IsLoggedIn"],
+        //"middlewares" => ["IsLoggedIn"],
         "route" => "statistics/:month/varste/:item-varsta",
         "handler" => "getItemVarsteStatistics"
+    ],
+
+    [
+        "method" => "GET",
+        //"middlewares" => ["IsLoggedIn"],
+        "route" => "statistics/:month/judet-varste/:city",
+        "handler" => "getCityAgeStatistics"
+    ],
+
+    [
+        "method" => "GET",
+        //"middlewares" => ["IsLoggedIn"],
+        "route" => "statistics/:month/judet-medii/:city",   //!!!!!!!!!!!!!!!!
+        "handler" => "getCityMediiMonthStatistics"
     ],
 
 
@@ -73,7 +87,14 @@ $monthStatisticsRoutes = [
         "method" => "GET",
         // "middlewares" => ["IsLoggedIn"],
         "route" => "statistics/:month/educatie/:item-educatie",
-        "handler" => "getItemEducatietatistics"
+        "handler" => "getItemEducatieStatistics"
+    ],
+
+    [
+        "method" => "GET",
+        // "middlewares" => ["IsLoggedIn"],
+        "route" => "statistics/:month/judet-educatie/:city",
+        "handler" => "getCityEducatieStatistics"
     ]
 ];
 
@@ -82,9 +103,9 @@ $conn = null;
 require __DIR__ . '/../config.php';
 
 
-function getMonthStatistics($req)
+function getMonthStatisticsNumberRate($req)
 {
-    Response::status(200); 
+    Response::status(200);
     $tabel = "";
     $stm = "";
     switch ($req['params']['month']) {
@@ -95,51 +116,72 @@ function getMonthStatistics($req)
             $tabel = "rataFebruarie2020";
             break;
         case 'ianuarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataIanuarie2020";
             break;
         case 'decembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataDecembrie2019";
             break;
         case 'noiembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataNoiemvrie2019";
             break;
         case 'octombrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataOctombrie2019";
             break;
         case 'septembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataSeptembrie2019";
             break;
         case 'august2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataAugust2019";
             break;
         case 'iulie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataIulie2019";
             break;
         case 'iunie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataIunie2019";
             break;
         case 'mai2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataMai2019";
             break;
         case 'aprilie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataAprile2019";
+            break;
+        case 'martie2019':
+            $tabel = "rataMartie019";
             break;
         default:
             $tabel = "404";
             break;
     }
 
-     
+
 
     if ($tabel != "404") {
 
-        if (isset($_GET["sort"]) && $_GET["sort"] == "numar-total") {
-            $stm .= "SELECT * FROM " . $tabel . " order by numartotal";
-        } else
+        $array = array("numartotal", "numarfemei", "numarbarbati", "numarindemnizati", "numarneindemnizati", "rata", "ratafemei", "ratabarbati");
+        if (isset($_GET["sort"])) {           
+                if (in_array($_GET["sort"], $array)) {
+
+                    $stm .= "SELECT * FROM " . $tabel . " order by " . $_GET["sort"] . " ";
+                } else {
+                    handle404();
+                    exit;
+                }
+            
+        } elseif (isset($_GET["filter"])) {
+
+          
+            if (in_array($_GET["filter"], $array)) { 
+                    $stm .= "SELECT  judet, " . $_GET["filter"]. " FROM " . $tabel . " ";
+                } else {
+                    handle404();
+                    exit;
+                }
+            
+        } else {
             $stm .= "SELECT * FROM " . $tabel . "";
+        }
 
         $result = mysqli_query($GLOBALS['conn'], $stm);
-        //echo $result;
         $data = array();
         foreach ($result as $row) {
             $data[] = $row;
@@ -149,12 +191,14 @@ function getMonthStatistics($req)
     } else {
         handle404();
     }
-    //echo "Get month {$req['params']['month']}";
 }
+
+
+
 
 function getItemMonthStatistics($req)
 {
-    Response::status(200); 
+    Response::status(200);
     $tabel = "";
     switch ($req['params']['month']) {
         case 'martie2020':
@@ -164,53 +208,61 @@ function getItemMonthStatistics($req)
             $tabel = "rataFebruarie2020";
             break;
         case 'ianuarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataIanuarie2020";
             break;
         case 'decembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataDecembrie2019";
             break;
         case 'noiembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataNoiemvrie2019";
             break;
         case 'octombrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataOctombrie2019";
             break;
         case 'septembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataSeptembrie2019";
             break;
         case 'august2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataAugust2019";
             break;
         case 'iulie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataIulie2019";
             break;
         case 'iunie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataIunie2019";
             break;
         case 'mai2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataMai2019";
             break;
         case 'aprilie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataAprile2019";
+            break;
+        case 'martie2019':
+            $tabel = "rataMartie019";
             break;
         default:
             $tabel = "404";
             break;
     }
-  
-    $result = mysqli_query($GLOBALS['conn'], "SELECT judet, {$req['params']['item-rata']} FROM " . $tabel . " ");
-    //echo $result;
-    $data = array();
-    foreach ($result as $row) {
-        $data[] = $row;
-    }
 
-    Response::json($data);
+    if ($tabel != "404") {
+        $result = mysqli_query($GLOBALS['conn'], "SELECT judet, {$req['params']['item-rata']} FROM " . $tabel . " ");
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+
+        Response::json($data);
+    } else {
+        handle404();
+    }
 }
+
+
 
 function getCityMonthStatistics($req)
 {
-    Response::status(200); 
+    Response::status(200);
 
     $tabel = "";
     switch ($req['params']['month']) {
@@ -221,164 +273,254 @@ function getCityMonthStatistics($req)
             $tabel = "rataFebruarie2020";
             break;
         case 'ianuarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataIanuarie2020";
             break;
         case 'decembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataDecembrie2019";
             break;
         case 'noiembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataNoiemvrie2019";
             break;
         case 'octombrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataOctombrie2019";
             break;
         case 'septembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataSeptembrie2019";
             break;
         case 'august2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataAugust2019";
             break;
         case 'iulie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataIulie2019";
             break;
         case 'iunie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataIunie2019";
             break;
         case 'mai2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataMai2019";
             break;
         case 'aprilie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "rataAprile2019";
+            break;
+        case 'martie2019':
+            $tabel = "rataMartie019";
             break;
         default:
             $tabel = "404";
             break;
     }
-    $param = "{$req['params']['city']}";
 
-    $stmt = $GLOBALS['conn']->prepare("SELECT * FROM " . $tabel . " WHERE  judet = ?");
-    $stmt->bind_param('s', $param);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $data = array();
-    foreach ($result as $row) {
-        $data[] = $row;
+    if ($tabel != "404") {
+
+        $param = "{$req['params']['city']}";
+
+        $stmt = $GLOBALS['conn']->prepare("SELECT * FROM " . $tabel . " WHERE  judet = ?");
+        $stmt->bind_param('s', $param);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+
+        Response::json($data);
+    } else {
+        handle404();
     }
-
-    Response::json($data);
 }
 
+function getCityAgeStatistics($req)
+{
+    Response::status(200);
+
+    $tabel = "";
+    switch ($req['params']['month']) {
+        case 'martie2020':
+            $tabel = "varsteMartie2020";
+            break;
+        case 'februarie2020':
+            $tabel = "varsteFebruarie2020";
+            break;
+        case 'ianuarie2020':
+            $tabel = "varsteIanuarie2020";
+            break;
+        case 'decembrie2019':
+            $tabel = "varsteDecembrie2019";
+            break;
+        case 'noiembrie2019':
+            $tabel = "varsteNoiemvrie2019";
+            break;
+        case 'octombrie2019':
+            $tabel = "varsteOctombrie2019";
+            break;
+        case 'septembrie2019':
+            $tabel = "varsteSeptembrie2019";
+            break;
+        case 'august2019':
+            $tabel = "varsteAugust2019";
+            break;
+        case 'iulie2019':
+            $tabel = "varsteIulie2019";
+            break;
+        case 'iunie2019':
+            $tabel = "varsteIunie2019";
+            break;
+        case 'mai2019':
+            $tabel = "varsteMai2019";
+            break;
+        case 'aprilie2019':
+            $tabel = "varsteAprile2019";
+            break;
+        case 'martie2019':
+            $tabel = "varsteMartie019";
+            break;
+        default:
+            $tabel = "404";
+            break;
+    }
+
+    if ($tabel != "404") {
+
+        $param = "{$req['params']['city']}";
+
+        $stmt = $GLOBALS['conn']->prepare("SELECT * FROM " . $tabel . " WHERE  judet = ?");
+        $stmt->bind_param('s', $param);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+
+        Response::json($data);
+    } else {
+        handle404();
+    }
+}
 
 function getVarsteStatistics($req)
 {
-    Response::status(200); 
+    Response::status(200);
 
     $tabel = "";
     switch ($req['params']['month']) {
         case 'martie2020':
-            $tabel = "rataMartie2020";
+            $tabel = "varsteMartie2020";
             break;
         case 'februarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteFebruarie2020";
             break;
         case 'ianuarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteIanuarie2020";
             break;
         case 'decembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteDecembrie2019";
             break;
         case 'noiembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteNoiemvrie2019";
             break;
         case 'octombrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteOctombrie2019";
             break;
         case 'septembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteSeptembrie2019";
             break;
         case 'august2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteAugust2019";
             break;
         case 'iulie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteIulie2019";
             break;
         case 'iunie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteIunie2019";
             break;
         case 'mai2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteMai2019";
             break;
         case 'aprilie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteAprile2019";
+            break;
+        case 'martie2019':
+            $tabel = "varsteMartie019";
             break;
         default:
             $tabel = "404";
             break;
     }
+    if ($tabel != "404") {
 
-    $result = mysqli_query($GLOBALS['conn'], "SELECT * FROM " . $tabel . " ");
-    $data = array();
-    foreach ($result as $row) {
-        $data[] = $row;
+        $result = mysqli_query($GLOBALS['conn'], "SELECT * FROM " . $tabel . " ");
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+
+        Response::json($data);
+    } else {
+        handle404();
     }
-
-    Response::json($data);
 }
 
 function getItemVarsteStatistics($req)
 {
-    Response::status(200); 
+    Response::status(200);
     $tabel = "";
     switch ($req['params']['month']) {
         case 'martie2020':
-            $tabel = "rataMartie2020";
+            $tabel = "varsteMartie2020";
             break;
         case 'februarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteFebruarie2020";
             break;
         case 'ianuarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteIanuarie2020";
             break;
         case 'decembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteDecembrie2019";
             break;
         case 'noiembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteNoiemvrie2019";
             break;
         case 'octombrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteOctombrie2019";
             break;
         case 'septembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteSeptembrie2019";
             break;
         case 'august2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteAugust2019";
             break;
         case 'iulie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteIulie2019";
             break;
         case 'iunie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteIunie2019";
             break;
         case 'mai2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteMai2019";
             break;
         case 'aprilie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "varsteAprile2019";
+            break;
+        case 'martie2019':
+            $tabel = "varsteMartie019";
             break;
         default:
             $tabel = "404";
             break;
     }
 
-    $result = mysqli_query($GLOBALS['conn'], "SELECT judet, {$req['params']['item-varsta']} FROM " . $tabel . "");
-    //echo $result;
-    $data = array();
-    foreach ($result as $row) {
-        $data[] = $row;
-    }
+    if ($tabel != "404") {
+        $result = mysqli_query($GLOBALS['conn'], "SELECT judet, {$req['params']['item-varsta']} FROM " . $tabel . "");
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
 
-    Response::json($data);
+        Response::json($data);
+    } else {
+        handle404();
+    }
 }
 
 function getMediiStatistics($req)
@@ -388,111 +530,265 @@ function getMediiStatistics($req)
     $tabel = "";
     switch ($req['params']['month']) {
         case 'martie2020':
-            $tabel = "rataMartie2020";
+            $tabel = "mediiMartie2020";
             break;
         case 'februarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiFebruarie2020";
             break;
         case 'ianuarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiIanuarie2020";
             break;
         case 'decembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiDecembrie2019";
             break;
         case 'noiembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiNoiemvrie2019";
             break;
         case 'octombrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiOctombrie2019";
             break;
         case 'septembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiSeptembrie2019";
             break;
         case 'august2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiAugust2019";
             break;
         case 'iulie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiIulie2019";
             break;
         case 'iunie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiIunie2019";
             break;
         case 'mai2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiMai2019";
             break;
         case 'aprilie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiAprile2019";
+            break;
+        case 'martie2019':
+            $tabel = "mediiMartie019";
             break;
         default:
             $tabel = "404";
             break;
     }
 
-    $result = mysqli_query($GLOBALS['conn'], "SELECT * FROM " . $tabel . "");
-    //echo $result;
-    $data = array();
-    foreach ($result as $row) {
-        $data[] = $row;
-    }
+    if ($tabel != "404") {
+        $result = mysqli_query($GLOBALS['conn'], "SELECT * FROM " . $tabel . "");
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
 
-    Response::json($data);
+        Response::json($data);
+    } else {
+        handle404();
+    }
 }
 
 function getItemMediiStatistics($req)
 {
     Response::status(200);
 
+
     $tabel = "";
     switch ($req['params']['month']) {
         case 'martie2020':
-            $tabel = "rataMartie2020";
+            $tabel = "mediiMartie2020";
             break;
         case 'februarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiFebruarie2020";
             break;
         case 'ianuarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiIanuarie2020";
             break;
         case 'decembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiDecembrie2019";
             break;
         case 'noiembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiNoiemvrie2019";
             break;
         case 'octombrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiOctombrie2019";
             break;
         case 'septembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiSeptembrie2019";
             break;
         case 'august2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiAugust2019";
             break;
         case 'iulie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiIulie2019";
             break;
         case 'iunie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiIunie2019";
             break;
         case 'mai2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiMai2019";
             break;
         case 'aprilie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "mediiAprile2019";
+            break;
+        case 'martie2019':
+            $tabel = "mediiMartie019";
             break;
         default:
             $tabel = "404";
             break;
     }
 
-    $result = mysqli_query($GLOBALS['conn'], "SELECT judet, {$req['params']['item-mediu']}  FROM " . $tabel . "");
-    //echo $result;
-    $data = array();
-    foreach ($result as $row) {
-        $data[] = $row;
+    if ($tabel != "404") {
+        $result = mysqli_query($GLOBALS['conn'], "SELECT judet, {$req['params']['item-mediu']}  FROM " . $tabel . "");
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+
+        Response::json($data);
+    } else {
+        handle404();
+    }
+}
+
+
+function getCityMediiMonthStatistics($req)
+{
+    Response::status(200);
+
+
+    $tabel = "";
+    switch ($req['params']['month']) {
+        case 'martie2020':
+            $tabel = "mediiMartie2020";
+            break;
+        case 'februarie2020':
+            $tabel = "mediiFebruarie2020";
+            break;
+        case 'ianuarie2020':
+            $tabel = "mediiIanuarie2020";
+            break;
+        case 'decembrie2019':
+            $tabel = "mediiDecembrie2019";
+            break;
+        case 'noiembrie2019':
+            $tabel = "mediiNoiemvrie2019";
+            break;
+        case 'octombrie2019':
+            $tabel = "mediiOctombrie2019";
+            break;
+        case 'septembrie2019':
+            $tabel = "mediiSeptembrie2019";
+            break;
+        case 'august2019':
+            $tabel = "mediiAugust2019";
+            break;
+        case 'iulie2019':
+            $tabel = "mediiIulie2019";
+            break;
+        case 'iunie2019':
+            $tabel = "mediiIunie2019";
+            break;
+        case 'mai2019':
+            $tabel = "mediiMai2019";
+            break;
+        case 'aprilie2019':
+            $tabel = "mediiAprile2019";
+            break;
+        case 'martie2019':
+            $tabel = "mediiMartie019";
+            break;
+        default:
+            $tabel = "404";
+            break;
     }
 
-    Response::json($data);
+    if ($tabel != "404") {
+        $param = "{$req['params']['city']}";
+
+        $stmt = $GLOBALS['conn']->prepare("SELECT * FROM " . $tabel . " WHERE  judet = ?");
+        $stmt->bind_param('s', $param);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+        Response::json($data);
+    } else {
+        handle404();
+    }
+}
+
+
+
+function getCityEducatieStatistics($req)
+{
+
+    Response::status(200);
+
+
+    $tabel = "";
+    switch ($req['params']['month']) {
+        case 'martie2020':
+            $tabel = "educatieMartie2020";
+            break;
+        case 'februarie2020':
+            $tabel = "educatieFebruarie2020";
+            break;
+        case 'ianuarie2020':
+            $tabel = "educatieIanuarie2020";
+            break;
+        case 'decembrie2019':
+            $tabel = "educatieDecembrie2019";
+            break;
+        case 'noiembrie2019':
+            $tabel = "educatieNoiemvrie2019";
+            break;
+        case 'octombrie2019':
+            $tabel = "educatieOctombrie2019";
+            break;
+        case 'septembrie2019':
+            $tabel = "educatieSeptembrie2019";
+            break;
+        case 'august2019':
+            $tabel = "educatieAugust2019";
+            break;
+        case 'iulie2019':
+            $tabel = "educatieIulie2019";
+            break;
+        case 'iunie2019':
+            $tabel = "educatieIunie2019";
+            break;
+        case 'mai2019':
+            $tabel = "educatieMai2019";
+            break;
+        case 'aprilie2019':
+            $tabel = "educatieAprile2019";
+            break;
+        case 'martie2019':
+            $tabel = "educatieMartie019";
+            break;
+        default:
+            $tabel = "404";
+            break;
+    }
+    if ($tabel != "404") {
+        $param = "{$req['params']['city']}";
+
+        $stmt = $GLOBALS['conn']->prepare("SELECT * FROM " . $tabel . " WHERE  judet = ?");
+        $stmt->bind_param('s', $param);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
+
+        Response::json($data);
+
+    } else {
+        handle404();
+    }
 }
 
 function getEducatieStatistics($req)
@@ -500,57 +796,64 @@ function getEducatieStatistics($req)
 
     Response::status(200);
 
+
     $tabel = "";
-     switch ($req['params']['month']) {
+    switch ($req['params']['month']) {
         case 'martie2020':
-            $tabel = "rataMartie2020";
+            $tabel = "educatieMartie2020";
             break;
         case 'februarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieFebruarie2020";
             break;
         case 'ianuarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieIanuarie2020";
             break;
         case 'decembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieDecembrie2019";
             break;
         case 'noiembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieNoiemvrie2019";
             break;
         case 'octombrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieOctombrie2019";
             break;
         case 'septembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieSeptembrie2019";
             break;
         case 'august2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieAugust2019";
             break;
         case 'iulie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieIulie2019";
             break;
         case 'iunie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieIunie2019";
             break;
         case 'mai2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieMai2019";
             break;
         case 'aprilie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieAprile2019";
+            break;
+        case 'martie2019':
+            $tabel = "educatieMartie019";
             break;
         default:
             $tabel = "404";
             break;
     }
+    if ($tabel != "404") {
+        $result = mysqli_query($GLOBALS['conn'], "SELECT * FROM " . $tabel . "");
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
 
-    $result = mysqli_query($GLOBALS['conn'], "SELECT * FROM " . $tabel . "");
-    //echo $result;
-    $data = array();
-    foreach ($result as $row) {
-        $data[] = $row;
+        Response::json($data);
+    } else {
+
+        handle404();
     }
-
-    Response::json($data);
 }
 
 function getItemEducatieStatistics($req)
@@ -560,60 +863,67 @@ function getItemEducatieStatistics($req)
     $tabel = "";
     switch ($req['params']['month']) {
         case 'martie2020':
-            $tabel = "rataMartie2020";
+            $tabel = "educatieMartie2020";
             break;
         case 'februarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieFebruarie2020";
             break;
         case 'ianuarie2020':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieIanuarie2020";
             break;
         case 'decembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieDecembrie2019";
             break;
         case 'noiembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieNoiemvrie2019";
             break;
         case 'octombrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieOctombrie2019";
             break;
         case 'septembrie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieSeptembrie2019";
             break;
         case 'august2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieAugust2019";
             break;
         case 'iulie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieIulie2019";
             break;
         case 'iunie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieIunie2019";
             break;
         case 'mai2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieMai2019";
             break;
         case 'aprilie2019':
-            $tabel = "rataFebruarie2020";
+            $tabel = "educatieAprile2019";
+            break;
+        case 'martie2019':
+            $tabel = "educatieMartie019";
             break;
         default:
             $tabel = "404";
             break;
     }
-    $result = mysqli_query($GLOBALS['conn'], "SELECT * FROM " . $tabel . "");
-    //echo $result;
-    $data = array();
-    foreach ($result as $row) {
-        $data[] = $row;
-    }
+    if ($tabel != "404") {
+        $result = mysqli_query($GLOBALS['conn'], "SELECT judet, {$req['params']['item-educatie']} FROM " . $tabel . "");
+        $data = array();
+        foreach ($result as $row) {
+            $data[] = $row;
+        }
 
-    Response::json($data);
+        Response::json($data);
+    } else {
+        handle404();
+    }
 }
 
 function IsLoggedIn()
 {
     //$allHeaders = getallheaders();
 
-    if (!isset($_SESSION['user_id'])) // If session is not set then redirect to Login Page
+     // If session is not set then redirect to Login Page
+    if (!isset($_SESSION['user_id']))
     {
         Response::status(401);
         Response::json([
